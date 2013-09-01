@@ -1,0 +1,74 @@
+h1 {
+	font-family: arial;
+}
+body { 
+	background-color: #96a8c8;
+}
+div { 
+	background-color: white; 
+	padding-bottom: 15px;
+}
+img { 
+	padding-bottom: 15px;
+}
+h2 {
+	font-family: arial;
+}
+strong {
+	padding: 1px 3px;
+	background-color: #fc6; 
+}
+div, #menu {
+	border: 2px solid black; 
+	margin: 10px 0px; 
+	padding-left: 20px; 
+}
+#menu {
+	background-color: #eee; 
+	font-family: arial; 
+	padding: 40px;
+	background-image: url('menu.png'); 
+	background-repeat: no-repeat; 
+	background-position: right bottom;  
+}
+#comic {
+	text-align: center;
+} 
+#header p { 
+	font-family: serif; 
+	font-weight: bold;
+	font-variant: small-caps;
+	margin: 0px;
+} 
+#comic p {
+	margin: 1px 0px;
+	font-style: italic;
+	font-family: arial;
+}
+#header a {
+	border-bottom: 1px blue dashed;
+	text-decoration: none;
+}
+#menu a {
+	color: black; 
+	text-decoration: none;
+	border-bottom: 1px black dashed;
+}
+#menu li {
+	margin: 10px;
+	font-size: 22px;
+}
+.romance {
+	color: #ac2d2d;
+}
+.sarcasm {
+	color: #30ac2d;
+}
+.math {
+	color: #2d45ac;
+}
+.language {
+	color: #e99613;
+}
+		
+		

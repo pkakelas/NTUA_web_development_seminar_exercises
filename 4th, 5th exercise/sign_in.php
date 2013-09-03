@@ -15,10 +15,7 @@
 			$username = $_POST["username2"]; 
 			$password = $_POST["password2"]; 
 			$sql="SELECT name FROM users WHERE username='$username' and password='$password'";
-			if($con->connect_errno > 0){
-				application_error('Unable to connect to database [' . $db->connect_error . ']');
-			}
-			else if(!$result = $con->query($sql)){
+			if(!$result = $con->query($sql)){
 				application_error('There was an error running the query [' . $con->error . ']');
 			}		
 			$row=mysqli_fetch_array($result);

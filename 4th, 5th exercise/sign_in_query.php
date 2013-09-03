@@ -1,0 +1,1 @@
+<?php	include 'sql.php' ;	$sql="SELECT name FROM users WHERE username='$username' and password='$password'";

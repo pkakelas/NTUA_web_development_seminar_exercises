@@ -1,5 +1,5 @@
 h1 {
-	color:#19666E ;
+	color:#19666E;
 	text-align: center;
 	border-bottom: 1px solid #ccc;
 	margin-top: 10px;
@@ -8,7 +8,7 @@ h1 {
 }
 body {
 	background-color : white;
-	font-style : italic ;
+	font-style : italic;
 }
 h2 {
 	font-size : 19px;
@@ -47,52 +47,52 @@ input {
 	margin-left : 42px;
 }
 #username {
-	margin-left : 48px ;
+	margin-left : 48px;
 }
 #password {
-	margin-left : 49px ;
+	margin-left : 49px;
 }
 #submit {
-	margin-left : 50% ;
-	margin-top : 35px ;
+	margin-left : 50%;
+	margin-top : 35px;
 }
 #username2 {
-	margin-left : 47px ; 
+	margin-left : 47px; 
 }
 #password2 {
-	margin-left : 54px ;
+	margin-left : 54px;
 }
 #submit2 {
-	margin-top : 35px ; 
-	margin-left : 50%  ;
+	margin-top : 35px; 
+	margin-left : 50%;
 }
 #footer {
-	padding : 10px ;
-	border-top : 1px solid #ccc ;
-	clear : both ;
-	padding-top : 15px ;
-	bottom : 10px ;
-	margin-top : 25px ;
+	padding : 10px;
+	border-top : 1px solid #ccc;
+	clear : both;
+	padding-top : 15px;
+	bottom : 10px;
+	margin-top : 25px;
 }
 #footer p {
-	text-align : center ;
+	text-align : center;
 }
 #forms p, a { 
 	text-align : center;
-	color :  black ;
+	color :  black;
 }
 
 #lists_ref {
 	text-align : center;
-	color :  #93C763 ;
+	color :  #93C763;
 }
 .uploaded {
-	border : 1px solid #black ;
+	border : 1px solid #black;
 }
 .index-forms p {
-	margin : 0px  ;
-	padding : 0px ;
+	margin : 0px;
+	padding : 0px;
 }
 #bth {
-	margin-left : 40px ;
+	margin-left : 40px;
 }

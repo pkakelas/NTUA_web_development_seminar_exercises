@@ -1,12 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <?php 
-	include 'sessions.php'
+	include 'sessions.php';
 ?>
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<?php 
-		include 'head.php' ;
+		include 'head.php';
 	 ?>
 	 <body>
 		<?php 
@@ -26,17 +26,20 @@
 						VALUES
 							( '$username',  '$name',  '$size',  '$type',  '$description',  '$target_path' )";	 
 			if (file_exists("C:/test/$name")) {
-				application_error("The file $name exists");
+				header('Location: upload_false_exists.php');
 			}
 			else if(move_uploaded_file($_FILES['file']['tmp_name'], $target_path)) {
 				mysqli_query($con,$sql) ;
 			}
-			if (!mysqli_query($con, $sql)) {  
-				application_error('There was an error running the query [' . $con->error . ']'); 
-			} 
-			else { 
-				echo "<p> The file $name has been uploaded </p>" ;
+			include 'upload_query.php';
+			if ($upload==1) {
+				header('Location: upload_true.php');
 			}
+			else{ 
+				header('Location: upload_false_query.php');
+			}
+				
+			
 		?>
 	</body>
 </html>

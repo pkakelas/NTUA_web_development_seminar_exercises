@@ -1,0 +1,1 @@
+<?php	include 'sql.php';	$sql="INSERT INTO 							`data` (`user`, `filename` ,`filesize` ,`filetype` ,`description` ,`saved`)						VALUES							( '$username',  '$name',  '$size',  '$type',  '$description',  '$target_path' )";	 	if (mysqli_query($con, $sql)){		$upload=1;	}	else {		$upload=0;	}

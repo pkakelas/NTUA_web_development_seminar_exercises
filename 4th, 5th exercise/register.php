@@ -16,6 +16,4 @@
 			include 'register_query.php';
 			include 'footer.php';
 		?>	
-	</body>
-</html>
 	

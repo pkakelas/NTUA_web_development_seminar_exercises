@@ -1,1 +1,1 @@
-<?php	include 'sql.php' ;	$sql="SELECT name FROM users WHERE username='$username' and password='$password'";
+<?php	function sql_sign_in($username, $password) {		include 'sql.php';		$sql="SELECT name FROM users WHERE username='$username' and password='$password'";		$result = $con->query($sql);		if (!$result) {			echo "good";		}		$row=mysqli_fetch_array($result);		$count=mysqli_num_rows($result);		if ($count>0) {			return "1";		}		else			return "0";		}?>

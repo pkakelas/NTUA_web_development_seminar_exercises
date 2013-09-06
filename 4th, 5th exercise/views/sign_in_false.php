@@ -2,11 +2,11 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">	
 	<?php 
-		include 'C:\Program Files\Apache Software Foundation\Apache2.2\htdocs\views\head.php'
+		include '..\views\head.php';
 	?>
 	<body>
 		<?php
-			include 'C:\Program Files\Apache Software Foundation\Apache2.2\htdocs\views\title.php' 
+			include '..\views\title.php';
 		?>
 			<p> I am afraid your Credentials didn't match. Please make sure that:</p>
 			<ol>
@@ -15,7 +15,7 @@
 			</ol>
 			<p>If the problem continues please contact me: pkakelas@gmail.com </p>
 		<?php
-			include 'C:\Program Files\Apache Software Foundation\Apache2.2\htdocs\views\footer.php'; 
+			include '..\views\footer.php'; 
 		?>
 	</body>
 </html>

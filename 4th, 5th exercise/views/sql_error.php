@@ -2,15 +2,15 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">	
 	<?php 
-		include 'C:\Program Files\Apache Software Foundation\Apache2.2\htdocs\views\head.php';
+		include '..\views\head.php';
 	?>
 	<body>
 		<?php
-			include 'C:\Program Files\Apache Software Foundation\Apache2.2\htdocs\views\title.php';
+			include '..\views\title.php';
 		 ?>
 		<p>I am afraid an error in the database occured. Please try again or contact me: pkakelas@gmail.com</p>
 		<?php			
-			include 'C:\Program Files\Apache Software Foundation\Apache2.2\htdocs\views\footer.php'
+			include '..\views\footer.php';
 		?>
 	</body>
 </html>

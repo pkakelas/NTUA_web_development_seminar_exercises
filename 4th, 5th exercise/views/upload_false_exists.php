@@ -2,15 +2,15 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">	
 	<?php 
-		include 'head.php';
+		include 'C:\Program Files\Apache Software Foundation\Apache2.2\htdocs\views\head.php';
 	?>
 	<body>
 		<?php
-			include 'title.php';
+			include 'C:\Program Files\Apache Software Foundation\Apache2.2\htdocs\views\title.php';
 		 ?>
 		<p>I am afraid the file exists. Please upload another file, or change the name of your file.</p>
 		<?php			
-			include 'footer.php'
+			include 'C:\Program Files\Apache Software Foundation\Apache2.2\htdocs\views\footer.php'
 		?>
 	</body>
 </html>

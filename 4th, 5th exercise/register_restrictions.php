@@ -1,1 +1,0 @@
-<?php	if ( $name == "" || $surname == "" || $age == "" || $password == "" || $username == "" || $email == "") {		echo application_error("Please fill in all forms.");	} 		else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {		header('Location:register_false_email.php');	}  	else if ($_POST['age']<13) {		header('Location:register_false_age.php');	}  ?>						

@@ -2,16 +2,16 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">	
 	<?php 
-		include 'head.php';
+		include 'C:\Program Files\Apache Software Foundation\Apache2.2\htdocs\views\head.php';
 	?>
 	<body>
 		<?php
-			include 'title.php';	
+			include 'C:\Program Files\Apache Software Foundation\Apache2.2\htdocs\views\title.php';	
 		?>
 		<p>There is a problem running the query in the sql database. Your file has been uploaded but it has not 
 		been registered in the database.Please try again or contact me: pkakelas@gmail.com</p>
 		<?php	
-			include 'footer.php';
+			include 'C:\Program Files\Apache Software Foundation\Apache2.2\htdocs\views\footer.php';
 		?>
 	</body>
 </html>

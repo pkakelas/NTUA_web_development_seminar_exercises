@@ -1,12 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <?php 
-	include 'sessions.php';
+	include 'C:\Program Files\Apache Software Foundation\Apache2.2\htdocs\models\sessions.php';
 ?>
  
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<?php
-		include 'head.php';
+		include 'C:\Program Files\Apache Software Foundation\Apache2.2\htdocs\views\head.php';
 	?>
 	<body>
 		<h1> Booooooooom Uploader. Share everything you want!  </h1>
@@ -19,15 +19,15 @@
 			while ($read = readdir($dir)) {
 				if ($read!='.' && $read!='..') { 
 					echo "<li> <div id=list_name>$read </div>
-					<div id=list_download><a href='download.php?name=$read' > Download</a> </div </li>";
+					<div id=list_download><a href='/controllers/download.php?name=$read' > Download</a> </div </li>";
 				}
 			}
 			echo '</ul>';
 			closedir($dir); 
 		?>
-		<p id="bth"> <a href="home.php"> Back to home </a> </p>
+		<p id="bth"> <a href="/views/home.php"> Back to home </a> </p>
 		<?php 
-			include 'footer.php'; 
+			include 'C:\Program Files\Apache Software Foundation\Apache2.2\htdocs\views\footer.php'; 
 		?>
 	</body>
 </html>	

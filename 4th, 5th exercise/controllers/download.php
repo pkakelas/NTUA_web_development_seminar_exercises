@@ -39,7 +39,7 @@
 	header("Pragma: public"); 
 	header("Expires: 0");
 	header("Content-Type: $type");
-	header("Content-Disposition: attachment; filename=\"".basename($filename)."\";" );
+	header("Content-Disposition: attachment; filename=/"".basename($filename)."/";" );
 	header("Content-Transfer-Encoding: binary");
 	header("Content-Length: ".filesize($filename));
 	readfile($filename);

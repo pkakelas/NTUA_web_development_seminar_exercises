@@ -2,15 +2,15 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">	
 	<?php 
-		include 'C:\Program Files\Apache Software Foundation\Apache2.2\htdocs\models\sessions.php';
-		include 'C:\Program Files\Apache Software Foundation\Apache2.2\htdocs\views\head.php';
+		include '../models/sessions.php';
+		include '../views/head.php';
 		$name = $_SESSION['name'];
 	?>
 	<body>
 		<?php
-			include 'C:\Program Files\Apache Software Foundation\Apache2.2\htdocs\views\title.php';
-			echo "<p> The file $name has been uploaded </p>" ;
-			include 'C:\Program Files\Apache Software Foundation\Apache2.2\htdocs\views\footer.php';
+			include '../views/title.php';
+			echo "<p> The file $name has been uploaded. Click <a href='../views/home.php'> here </a> to go to the previous page. </p>" ;
+			include '../views/footer.php';
 		?>
 	</body>
 </html>

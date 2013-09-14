@@ -2,16 +2,15 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">	
 	<?php 
-<<<<<<< HEAD
-		include '../views/head.php';
+		include '..\views\head.php';
 	?>
 	<body>
 		<?php
-			include '../views/title.php';
+			include '..\views\title.php';
 		 ?>
-		<p>I am afraid the file exists. Please upload another file, or change the name of your file.</p>
+		<p>E-mail is not valid.Click <a href='index.php'> here</a> to visit the Boom Uploader starting page</p>
 		<?php			
-			include '../views/footer.php';
+			include '..\views\footer.php'
 		?>
 	</body>
 </html>

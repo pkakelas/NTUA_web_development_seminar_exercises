@@ -25,7 +25,7 @@
 			echo '</ul>';
 			closedir($dir); 
 		?>
-		<p id="bth"> <a href="../views/home.php"> Back to home </a> </p>
+		<p id="bth"> <a href="../controllers/home.php"> Back to home </a> </p>
 		<?php 
 			include '../views/footer.php'; 
 		?>

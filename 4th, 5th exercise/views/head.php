@@ -4,7 +4,7 @@
 		<meta name='description' content='File uploading Site'/>
 		<meta name='keywords' content= 'Files, File uploading'/>
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8;"/>
-		<link rel="stylesheet" type="text/css" href="..\views\st.css"/>
+		<link rel="stylesheet" type="text/css" href="..\static\st.css"/>
 	</head>
 
 	

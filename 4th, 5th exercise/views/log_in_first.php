@@ -7,11 +7,11 @@
 	<body>
 		<?php
 			include '../views/title.php';
-		 ?>
-		<p> Good Job! From now on you are a "boom uploder" user. 
-		Click <a href="../controllers/home.php?">here </a> to begin your journey </p>
-		<?php			
-			include '../views/footer.php';
+		?>
+			<p> I am afraid you must have logged in, in order to proceed to this page.</p>
+			<p> Click <a href="../views/index.php">here</a> to log in </p>
+		<?php
+			include '../views/footer.php'; 
 		?>
 	</body>
-</html> 
+</html>

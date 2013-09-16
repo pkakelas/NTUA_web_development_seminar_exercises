@@ -4,9 +4,9 @@
 	$name = $_POST['name'];
 	$surname = $_POST['surname'];
 	$age = $_POST['age'];
-	$password = $_POST['password'];
-	$username = $_POST['username'];
 	$email = $_POST['email'];  
+	$username = $_POST['username'];
+	$password = md5($_POST['password']);
 	function register_validation ($name, $surname, $age, $username, $password, $email) {
 		if	($age<13 || $name == "" || $surname == "" || $age == "" || $password == "" || $username == "" || $email == "" ||
 		!filter_var($email, FILTER_VALIDATE_EMAIL)) { 

@@ -1,23 +1,28 @@
 <?php 
 	include '../models/upload_query.php';
-	$name = $_FILES['file']['name']; 
+	include'../models/sessions.php';
+	include '../controllers/file_upload_functions.php';
+	$filename = $_FILES['file']['name']; 
 	$username = $_SESSION['username'];
-	$description = $_POST['description']; 
+	$description = addslashes($_POST['description']);
+	$description = htmlspecialchars($description);
+	$tmp_name = $_FILES['file']['tmp_name'];
 	$size = $_FILES['file']['size'];
 	$type = $_FILES["file"]["type"];
-	$target_path = "C:/test/$name";
-	function name_correct($name) {
-		$name = strtolower($_FILES['file']['name']);
-		$name = str_replace(" ", "_", $name);  
-		return $name;
+	$target_path = "C:/test/$filename";
+	$name=name_correct($filename);
+	if (file_in_form($tmp_name)==false){
+		include '../views/upload_false_nothing.php';
 	}
-	$name=name_correct($name);
-	if (file_exists("C:/test/$name")) {
+	else if (file_ext ($filename)==false) {
+		include '../views/upload_false_ext.php';		
+	}
+	else if (file_exists("C:/test/$filename")) {
 		include '../views/upload_false_exists.php';
 	} 
-	else if(move_uploaded_file($_FILES['file']['tmp_name'], $target_path)) {
+	else if(move_uploaded_file($tmp_name, $target_path)) {
 		$result = file_upload($username, $name, $size, $type, $description, $target_path);
-		if($result==1) {			
+		if($result==true) {			
 			$_SESSION['name'] = $name;
 			include '../views/upload_true.php';
 		}

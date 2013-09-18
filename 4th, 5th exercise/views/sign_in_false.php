@@ -13,7 +13,9 @@
 				<li> You have already register in Boom Uploader </li>
 				<li> You haven't mispelled your username or your password</li>
 			</ol>
+			<p> Please <a href="../controllers/index.php">Try again</a></p>
 			<p>If the problem continues please contact me: pkakelas@gmail.com </p>
+			
 		<?php
 			include '../views/footer.php'; 
 		?>

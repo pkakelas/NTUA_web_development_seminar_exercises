@@ -8,8 +8,8 @@
 		<?php
 			include '../views/title.php';
 		?>
-			<p> I am afraid you must have logged in, in order to proceed to this page.</p>
-			<p> Click <a href="../controllers/index.php">here</a> to log in </p>
+			<p> I am afraid the file you attempted to upload is not supported.</p>
+			<p> Click <a href="../controllers/home.php">here</a> to try again </p>
 		<?php
 			include '../views/footer.php'; 
 		?>

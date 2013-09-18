@@ -1,28 +1,28 @@
 <?php   
 	include '../models/sessions.php';
 	include '../models/user_queries.php';
-	$name = $_POST['name'];
-	$surname = $_POST['surname'];
-	$age = $_POST['age'];
-	$email = $_POST['email'];  
-	$username = $_POST['username'];
+	$name = $username = addslashes($_POST['name']); 
+	$surname =addslashes($_POST['surname']);
+	$age = addslashes ($_POST['age']);
+	$email = addslashes($_POST['email']);  
+	$username = addslashes($_POST['username']);
 	$password = md5($_POST['password']);
 	function register_validation ($name, $surname, $age, $username, $password, $email) {
 		if	($age<13 || $name == "" || $surname == "" || $age == "" || $password == "" || $username == "" || $email == "" ||
 		!filter_var($email, FILTER_VALIDATE_EMAIL)) { 
-			return "0";
+			return false;
 		}
 		else { 
-			return "1";
+			return true;
 		}
 	}
 	$problems=register_validation ($name, $surname, $age, $username, $password, $email);
-	if ($problems==0) {
+	if ($problems == false) {
 		include '../views/register_problems.php';
 	}
-	else if ($problems==1) {
+	else if ($problems == true) {
 		$result=sql_register($name,  $surname,  $age,  $username,  $password, $email); 
-		if ($result==1) {
+		if ($result == true) {
 			$_SESSION['username'] = $username;
 			include '../views/register_true.php';
 		}

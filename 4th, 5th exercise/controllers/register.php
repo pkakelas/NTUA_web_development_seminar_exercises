@@ -6,9 +6,9 @@
 	$age = addslashes ($_POST['age']);
 	$email = addslashes($_POST['email']);  
 	$username = addslashes($_POST['username']);
-	$password = md5($_POST['password']);
+	$password = $_POST['password'];
 	function register_validation ($name, $surname, $age, $username, $password, $email) {
-		if	($age<13 || $name == "" || $surname == "" || $age == "" || $password == "" || $username == "" || $email == "" ||
+		if	(!is_numeric($age) ||$age<13 || $name == "" || $surname == "" || $age == "" || $password == "" || $username == "" || $email == "" ||
 		!filter_var($email, FILTER_VALIDATE_EMAIL)) { 
 			return false;
 		}
@@ -21,6 +21,7 @@
 		include '../views/register_problems.php';
 	}
 	else if ($problems == true) {
+		$password = md5($_POST['password']);
 		$result=sql_register($name,  $surname,  $age,  $username,  $password, $email); 
 		if ($result == true) {
 			$_SESSION['username'] = $username;

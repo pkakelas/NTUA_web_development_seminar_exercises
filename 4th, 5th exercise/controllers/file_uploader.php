@@ -1,20 +1,19 @@
 <?php 
-	include '../models/upload_query.php';
+	include '../models/upload.php';
 	include'../models/sessions.php';
 	include '../controllers/file_upload_functions.php';
 	$filename = $_FILES['file']['name']; 
 	$username = $_SESSION['username'];
-	$description = addslashes($_POST['description']);
-	$description = htmlspecialchars($description);
+	$description = $_POST['description'];
 	$tmp_name = $_FILES['file']['tmp_name'];
 	$size = $_FILES['file']['size'];
 	$type = $_FILES["file"]["type"];
 	$target_path = "C:/test/$filename";
-	$name=name_correct($filename);
-	if (file_in_form($tmp_name)==false){
+	$name = name_correct($filename);
+	if (file_exists($tmp_name) !== true){
 		include '../views/upload_false_nothing.php';
 	}
-	else if (file_ext ($filename)==false) {
+	else if (file_ext ($filename) == false) {
 		include '../views/upload_false_ext.php';		
 	}
 	else if (file_exists("C:/test/$filename")) {
@@ -22,7 +21,7 @@
 	} 
 	else if(move_uploaded_file($tmp_name, $target_path)) {
 		$result = file_upload($username, $name, $size, $type, $description, $target_path);
-		if($result==true) {			
+		if($result) {			
 			$_SESSION['name'] = $name;
 			include '../views/upload_true.php';
 		}

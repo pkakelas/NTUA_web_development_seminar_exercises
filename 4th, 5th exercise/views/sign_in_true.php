@@ -6,9 +6,9 @@
 	?>
 	<body>
 		<?php
-			include '../views/title.php';
-			echo "<p> Welcome back $username. Click <a href='../controllers/home.php?'>here </a> to begin your journey </p>"?>
-		
+			include '../views/title.php'; 
+		?>
+			<p> Welcome back <? echo $username ?> .Click <a href = '../controllers/home.php?'>here </a> to begin your journey </p>
 		<?php
 			include '../views/footer.php';
 		?>

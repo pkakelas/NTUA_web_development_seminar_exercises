@@ -15,15 +15,13 @@
 				download files without any cost. Have fun ! </p>
 		<?php
 			$dir = opendir('c:/test/'); 
-			echo '<ul>' ;
-			while ($read = readdir($dir)) {
-				if ($read!='.' && $read!='..') { 
-					echo "<li> <div id=list_name>$read </div>
-					<div id=list_download><a href='/controllers/download.php?name=$read' > Download</a> </div </li>";
-				}
+			echo '<ul>';
+			$arrlength = count($names);
+			for($x = 0; $x < $arrlength; $x++) { 
+				echo "<li> $names[$x] </li>";
+				echo "<div id=list_download><a href='/controllers/download.php?name=$names[$x]' > Download</a> </div </li>";
 			}
 			echo '</ul>';
-			closedir($dir); 
 		?>
 		<p id="bth"> <a href="../controllers/home.php"> Back to home </a> </p>
 		<?php 

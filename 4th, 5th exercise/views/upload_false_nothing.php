@@ -9,7 +9,7 @@
 			include '../views/title.php';
 		?>
 			<p> You haven't uploaded a damn thing.</p>
-			<p> Click <a href="../controllers/home.php">here</a> to try again </p>
+			<p> Click <a href = "../controllers/home.php">here</a> to try again </p>
 		<?php
 			include '../views/footer.php'; 
 		?>

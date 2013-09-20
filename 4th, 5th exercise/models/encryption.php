@@ -1,0 +1,1 @@
+<?php	function encryption($username, $password) {		$salt = md5($username.$password);		hash('sha512', $salt);		$hash = crypt($password, $salt);		return $hash;	}?>  

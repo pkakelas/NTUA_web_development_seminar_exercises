@@ -9,7 +9,7 @@
 			include '../views/title.php';
 		 ?>
 		<p> Good Job! From now on you are a "boom uploder" user. 
-		Click <a href="../controllers/home.php?">here </a> to begin your journey </p>
+		Click <a href = "../controllers/home.php?">here </a> to begin your journey </p>
 		<?php			
 			include '../views/footer.php';
 		?>

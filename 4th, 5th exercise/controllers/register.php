@@ -1,28 +1,20 @@
 <?php   
 	include '../models/sessions.php';
-	include '../models/user_queries.php';
-	$name = $username = addslashes($_POST['name']); 
-	$surname =addslashes($_POST['surname']);
-	$age = addslashes ($_POST['age']);
-	$email = addslashes($_POST['email']);  
-	$username = addslashes($_POST['username']);
+	include '../models/user.php';
+	include '../controllers/user_validation_functions.php';
+	$name = $_POST['name']; 
+	$surname = $_POST['surname'];
+	$age = $_POST['age'];
+	$email = $_POST['email'];  
+	$username = $_POST['username'];
 	$password = $_POST['password'];
-	function register_validation ($name, $surname, $age, $username, $password, $email) {
-		if	(!is_numeric($age) ||$age<13 || $name == "" || $surname == "" || $age == "" || $password == "" || $username == "" || $email == "" ||
-		!filter_var($email, FILTER_VALIDATE_EMAIL)) { 
-			return false;
-		}
-		else { 
-			return true;
-		}
-	}
-	$problems=register_validation ($name, $surname, $age, $username, $password, $email);
-	if ($problems == false) {
+	$problems = register_validation ($name, $surname, $age, $username, $password, $email);
+	$arrlength = count($problems);
+	if ($arrlength !== 0) {
 		include '../views/register_problems.php';
 	}
-	else if ($problems == true) {
-		$password = md5($_POST['password']);
-		$result=sql_register($name,  $surname,  $age,  $username,  $password, $email); 
+	else {
+		$result = register($name,  $surname,  $age,  $username,  $password, $email); 
 		if ($result == true) {
 			$_SESSION['username'] = $username;
 			include '../views/register_true.php';

@@ -1,4 +1,5 @@
 <?php 
+	
 	include '../models/upload.php';
 	include '../models/sessions.php';
 	include '../controllers/file_upload_functions.php';
@@ -29,5 +30,6 @@
 			include '../views/upload_false_query.php';
 		}		
 	}	
+	
 ?>
 	

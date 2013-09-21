@@ -1,4 +1,5 @@
 <?php
+
 	$filepath = "C:/test/";
 	$name = basename($_GET["name"]);
 	$filename = $filepath.$name;
@@ -41,4 +42,5 @@
     header('Pragma: public');
     header('Content-Length: ' . filesize($filename));
 	readfile($filename);
+
 ?>

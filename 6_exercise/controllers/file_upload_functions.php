@@ -11,4 +11,5 @@
 		$file_ext = substr($filename, strpos($filename,'.'), strlen($filename)-1); 
 		return in_array($file_ext, $allowed_ext);
 	}
+	
 ?>

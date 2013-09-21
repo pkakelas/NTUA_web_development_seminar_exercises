@@ -7,11 +7,11 @@
 	<body>
 		<?php
 			include '../views/title.php';
-		 ?>
-		<p> Good Job! From now on you are a "boom uploder" user. 
-		Click <a href = "../controllers/home.php?">here </a> to begin your journey </p>
-		<?php			
-			include '../views/footer.php';
+		?>
+			<p> I am afraid the file that you attempted to upload is not supported.</p>
+			<p> Click <a href="../controllers/home.php">here</a> to try again </p>
+		<?php
+			include '../views/footer.php'; 
 		?>
 	</body>
-</html> 
+</html>

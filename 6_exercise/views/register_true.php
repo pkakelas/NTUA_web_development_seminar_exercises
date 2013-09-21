@@ -6,12 +6,12 @@
 	?>
 	<body>
 		<?php
-			include '../views/title.php';	
-		?>
-		<p>There is a problem running the query in the sql database. Your file has been uploaded but it has not 
-		been registered in the database.Please try again or contact me: pkakelas@gmail.com</p>
-		<?php	
+			include '../views/title.php';
+		 ?>
+		<p> Good Job! From now on you are a "boom uploder" user. 
+		Click <a href="../controllers/home.php?">here </a> to begin your journey </p>
+		<?php			
 			include '../views/footer.php';
 		?>
 	</body>
-</html>
+</html> 

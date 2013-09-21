@@ -1,6 +1,6 @@
 <?php 
 	include '../models/upload.php';
-	include'../models/sessions.php';
+	include '../models/sessions.php';
 	include '../controllers/file_upload_functions.php';
 	$filename = $_FILES['file']['name']; 
 	$username = $_SESSION['username'];
@@ -19,9 +19,9 @@
 	else if (file_exists("C:/test/$filename")) {
 		include '../views/upload_false_exists.php';
 	} 
-	else if(move_uploaded_file($tmp_name, $target_path)) {
+	else if (move_uploaded_file($tmp_name, $target_path)) {
 		$result = file_upload($username, $name, $size, $type, $description, $target_path);
-		if($result) {			
+		if ($result) {			
 			$_SESSION['name'] = $name;
 			include '../views/upload_true.php';
 		}

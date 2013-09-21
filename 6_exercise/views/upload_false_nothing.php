@@ -6,11 +6,12 @@
 	?>
 	<body>
 		<?php
-			include '../views/title.php'; 
+			include '../views/title.php';
 		?>
-			<p> Welcome back <? echo $username ?> .Click <a href = '../controllers/home.php?'>here </a> to begin your journey </p>
+			<p> You haven't uploaded any files yet.</p>
+			<p> Click <a href="../controllers/home.php">here</a> to try again </p>
 		<?php
-			include '../views/footer.php';
+			include '../views/footer.php'; 
 		?>
 	</body>
-</html> 
+</html>

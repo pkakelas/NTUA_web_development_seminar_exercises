@@ -11,7 +11,7 @@
 	<body>
 		<h1> Booooooooom Uploader. Share everything you want!  </h1>
 		<h2> Check out whatever other users upload </h2>
-		<p> In this page you can see a list of all the uploaded files that are saved on our servers. Here you can also 
+		<p> In this page you can see a list of all the uploaded files that are saved in our servers. Here you can also 
 				download files without any cost. Have fun ! </p>
 		<?php
 			$dir = opendir('c:/test/'); 

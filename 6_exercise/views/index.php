@@ -25,7 +25,7 @@
 		</div>
 		<div id='sign_in'>
 			<h2> Already a Boom Uploader user ?</h2>
-			<p> What are you waiting for ? Sign in to continue your journey !  </p>
+			<p> What are you waiting for? Sign in to continue your journey !  </p>
 			<form class="index-forms" action="../controllers/sign_in.php" method="post"> 
 				<p>	Username <input id="Username2" type="text" name="username2" /> </p>
 				<p>	Password <input id="Password2" type="password" name="password2" /> </p> 

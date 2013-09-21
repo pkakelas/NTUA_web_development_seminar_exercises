@@ -8,13 +8,13 @@
 		<?php
 			include '../views/title.php';
 		?>
-			<p> I am afraid your Credentials didn't match. Please make sure that:</p>
+			<p> I am afraid your Credentials could not be verified. Please make sure that:</p>
 			<ol>
-				<li> You have already register in Boom Uploader </li>
-				<li> You haven't mispelled your username or your password</li>
+				<li> you have already registered  </li>
+				<li> you haven't mispelled your username or your password</li>
 			</ol>
-			<p> Please <a href = "../controllers/index.php">Try again</a></p>
-			<p>If the problem continues please contact me: pkakelas@gmail.com </p>
+			<p> please <a href="../controllers/index.php">Try again</a></p>
+			<p>If the problem continues, please contact me: pkakelas@gmail.com </p>
 			
 		<?php
 			include '../views/footer.php'; 

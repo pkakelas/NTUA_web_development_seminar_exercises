@@ -7,11 +7,10 @@
 	<body>
 		<?php
 			include '../views/title.php';
-		?>
-			<p> I am afraid the file you attempted to upload is not supported.</p>
-			<p> Click <a href = "../controllers/home.php">here</a> to try again </p>
-		<?php
-			include '../views/footer.php'; 
+		 ?>
+		<p>The file exists. Please upload another file, or change the name of your file.</p>
+		<?php			
+			include '../views/footer.php';
 		?>
 	</body>
 </html>

@@ -1,7 +1,7 @@
 <?php
-	$filepath = "C:/test/" ;
-	$name = $_GET["name"] ;
-	$filename = $filepath.$name ;
+	$filepath = "C:/test/";
+	$name = basename($_GET["name"]);
+	$filename = $filepath.$name;
 	$file_ext = substr($filename, strpos($filename,'.'), strlen($filename)-1); 
 	if ($file_ext == ".exe") {
 		header("Content-Type: application/octet-stream");

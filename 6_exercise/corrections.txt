@@ -58,12 +58,12 @@
 *	https://github.com/pkakelas/NTUA_web_development_seminar/blob/master/4th%2C%205th%20exercise/controllers/download.php#L7*
 *	εδώ τυπώνεις το string header αντί να στέλνεις ένα header
 *	δεν ξέρω τι σκεφτόσουν...
-	επίσης έχεις πρόβλημα ασφάλειας
-	download.php?name=../Documents and Settings/Dimitris/secret.txt
-	τον πούλο
-	διόρθωσέ το
-	διόρθωσε επίσης όλα τα coding style λάθη
-	κενά, indentation κλπ.
+*	επίσης έχεις πρόβλημα ασφάλειας
+*	download.php?name=../Documents and Settings/Dimitris/secret.txt
+*	τον πούλο
+*	διόρθωσέ το
+*	διόρθωσε επίσης όλα τα coding style λάθη
+*	κενά, indentation κλπ.
 *	ο κώδικάς σου είναι βρώμικος
 *	μη γράφεις έτσι
 *	επίσης:

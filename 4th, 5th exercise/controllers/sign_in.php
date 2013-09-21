@@ -5,7 +5,7 @@
 	$username = $_POST["username2"]; 
 	$password = $_POST["password2"]; 
 	$result = sign_in($username, $password);
-	if($result == true) {
+	if($result) {
 		$_SESSION['username'] = $username;
 		include '../views/sign_in_true.php';
 	}

@@ -1,4 +1,5 @@
 <?php   
+
 	include '../models/sessions.php';
 	include '../models/user.php';
 	include '../controllers/user_validation_functions.php';
@@ -23,5 +24,6 @@
 			include '../views/register_false_query.php';
 		}
 	}
+
 ?>	
 	

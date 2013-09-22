@@ -1,6 +1,6 @@
 <?php 
 	
-	include '../models/upload.php';
+	include '../models/data.php';
 	include '../models/sessions.php';
 	include '../controllers/file_upload_functions.php';
 	$filename = $_FILES['file']['name']; 

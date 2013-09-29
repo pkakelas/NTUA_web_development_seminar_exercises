@@ -8,6 +8,6 @@
 	else {  
 		$names = readlist();
 		include '../views/list.php';
-		}
+	}
 
 ?>

@@ -2,14 +2,14 @@
 	
 	function readlist() {
 		$dir = opendir('c:/test/'); 
-		$names = array ();
+		$names = array();
 		while ($read = readdir($dir)) {
 			if ($read != '.' && $read != '..' && $read != 'desktop.ini') {
 				$names[] = $read;
-			 }
+			}
 		} 
-		closedir ($dir); 
-		return ($names);
+		closedir($dir); 
+		return $names;
 	}
 
 ?>

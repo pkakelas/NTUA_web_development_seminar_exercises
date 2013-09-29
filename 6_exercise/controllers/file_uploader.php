@@ -11,10 +11,10 @@
 	$type = $_FILES["file"]["type"];
 	$target_path = "C:/test/$filename";
 	$name = name_correct($filename);
-	if (file_exists($tmp_name) !== true){
+	if (!file_exists($tmp_name)){
 		include '../views/upload_false_nothing.php';
 	}
-	else if (file_ext ($filename) == false) {
+	else if (!valid_file_extension($filename)) {
 		include '../views/upload_false_ext.php';		
 	}
 	else if (file_exists("C:/test/$filename")) {

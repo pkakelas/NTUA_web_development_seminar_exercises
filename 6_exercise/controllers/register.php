@@ -9,14 +9,14 @@
 	$email = $_POST['email'];  
 	$username = $_POST['username'];
 	$password = $_POST['password'];
-	$problems = register_validation ($name, $surname, $age, $username, $password, $email);
+	$problems = register_validation($name, $surname, $age, $username, $password, $email);
 	$arrlength = count($problems);
-	if ($arrlength !== 0) {
+	if (count($problems)) {
 		include '../views/register_problems.php';
 	}
 	else {
 		$result = register($name,  $surname,  $age,  $username,  $password, $email); 
-		if ($result == true) {
+		if ($result) {
 			$_SESSION['username'] = $username;
 			include '../views/register_true.php';
 		}

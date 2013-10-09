@@ -1,12 +1,9 @@
-<?php				
+<?php			
 
-	include '../models/sessions.php';
-	if ($_SESSION['username'] == "") {
-		include '../views/log_in_first.php';
-	}
-	else {  
-		$username = $_SESSION['username'];
+	function controller_home() {
 		include '../views/home.php';
 	}
-	
+		
+	controller_home();
+
 ?>

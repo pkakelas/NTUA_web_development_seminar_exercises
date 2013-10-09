@@ -51,4 +51,5 @@
 	}
 	
 	controller_download($_GET['name']);
+
 ?>

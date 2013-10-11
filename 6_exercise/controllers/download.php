@@ -2,7 +2,7 @@
 	
 	function controller_download($name) {
 		$name = basename($_GET['name']);
-		$filepath = "C:/test/";
+		$filepath = "/home/dimitris/test/";
 		$name = basename($_GET["name"]);
 		$filename = $filepath . $name;
 		$file_ext = substr($filename, strpos($filename, '.'), strlen($filename) - 1); 

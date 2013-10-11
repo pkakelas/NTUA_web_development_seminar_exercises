@@ -4,7 +4,7 @@
 		include '../models/data.php';
 		include '../models/sessions.php';
 		include '../controllers/file_upload_functions.php';
-		$target_path = "C:/test/$filename";
+		$target_path = "/home/dimitris/test/$filename";
 		$name = name_correct($filename);
 		if (!file_exists($tmp_name)){
 			include '../views/upload_false_nothing.php';
@@ -12,7 +12,7 @@
 		else if (!valid_file_extension($filename)) {
 			include '../views/upload_false_ext.php';		
 		}
-		else if (file_exists("C:/test/$filename")) {
+		else if (file_exists("/home/dimitris/test/$filename")) {
 			include '../views/upload_false_exists.php';
 		} 
 		else if (move_uploaded_file($tmp_name, $target_path)) {

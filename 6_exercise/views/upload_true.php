@@ -6,14 +6,14 @@
 	
 		<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">	
 			<?php 
-				include '../models/sessions.php';
-				include '../views/head.php';
+				include 'models/sessions.php';
+				include 'views/head.php';
 			?>
 			<body>
 				<?php
-					include '../views/title.php';
-					echo "<p> The file $name has been uploaded. Click <a href='../views/home.php'> here </a> to go to the previous page. </p>" ;
-					include '../views/footer.php';
+					include 'views/title.php';
+					echo "<p> The file $name has been uploaded. Click <a href='index.php?resource=home'> here </a> to go to the previous page. </p>" ;
+					include 'views/footer.php';
 				?>
 			</body>
 		</html>

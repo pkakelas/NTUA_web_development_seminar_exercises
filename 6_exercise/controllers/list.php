@@ -1,9 +1,9 @@
 <?php				
 	
 	function controller_list() {
-		include '../models/readlist.php';
+		include 'models/readlist.php';
 		$names = readlist();
-		include '../views/list.php';
+		include 'views/list.php';
 	}
 	
 	controller_list();

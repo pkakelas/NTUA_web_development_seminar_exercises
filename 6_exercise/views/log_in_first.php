@@ -13,7 +13,7 @@
 					include '../views/title.php';
 				?>
 					<p> I am afraid you must have logged in, in order to proceed to this page.</p>
-					<p> Click <a href="../controllers/index.php">here</a> to log in </p>
+					<p> Click <a href="../controllers/main.php">here</a> to log in </p>
 				<?php
 					include '../views/footer.php'; 
 				?>

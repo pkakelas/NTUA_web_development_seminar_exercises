@@ -6,16 +6,16 @@
 
 		<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">	
 			<?php 
-				include '../views/head.php';
+				include 'views/head.php';
 			?>
 			<body>
 				<?php
-					include '../views/title.php';
+					include 'views/title.php';
 				 ?>
 				<p> Good Job! From now on you are a "boom uploder" user. 
-				Click <a href="../controllers/home.php?">here </a> to begin your journey </p>
+				Click <a href="index.php?resource=home">here </a> to begin your journey </p>
 				<?php			
-					include '../views/footer.php';
+					include 'views/footer.php';
 				?>
 			</body>
 		</html> 

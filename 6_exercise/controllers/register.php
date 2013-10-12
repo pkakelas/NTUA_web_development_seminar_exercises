@@ -1,22 +1,22 @@
 <?php   
 	
 	function controller_register($name, $surname, $age, $email, $username, $password) {
-		include '../models/sessions.php';
-		include '../models/user.php';
-		include '../controllers/user_validation_functions.php';
+		include 'models/sessions.php';
+		include 'models/user.php';
+		include 'controllers/user_validation_functions.php';
 		$problems = register_validation($name, $surname, $age, $username, $password, $email);
 		$arrlength = count($problems);
 		if (count($problems)) {
-			include '../views/register_problems.php';
+			include 'views/register_problems.php';
 		}
 		else {
 			$result = register($name, $surname, $age, $username, $password, $email); 
 			if ($result) {
 				$_SESSION['username'] = $username;
-				include '../views/register_true.php';
+				include 'views/register_true.php';
 			}
 			else {
-				include '../views/register_false_query.php';
+				include 'views/register_false_query.php';
 			}
 		}
 	}

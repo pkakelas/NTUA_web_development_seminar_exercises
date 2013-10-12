@@ -6,16 +6,16 @@
 
 		<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">	
 			<?php 
-				include '../views/head.php';
+				include 'views/head.php';
 			?>
 			<body>
 				<?php
-					include '../views/title.php';
+					include 'views/title.php';
 				?>
 					<p> I am afraid the file that you attempted to upload is not supported.</p>
-					<p> Click <a href="../controllers/home.php">here</a> to try again </p>
+					<p> Click <a href="index.php?resource=home">here</a> to try again </p>
 				<?php
-					include '../views/footer.php'; 
+					include 'views/footer.php'; 
 				?>
 			</body>
 		</html>

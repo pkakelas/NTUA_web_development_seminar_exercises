@@ -6,22 +6,22 @@
 
 		<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">	
 			<?php 
-				include '../views/head.php';
+				include 'views/head.php';
 			?>
 			<body>
 				<?php
-					include '../views/title.php';
+					include 'views/title.php';
 				?>
 					<p> I am afraid your Credentials could not be verified. Please make sure that:</p>
 					<ol>
 						<li> you have already registered  </li>
 						<li> you haven't mispelled your username or your password</li>
 					</ol>
-					<p> please <a href="../controllers/index.php">Try again</a></p>
+					<p> please <a href="index.php?resource=main">Try again</a></p>
 					<p>If the problem continues, please contact me: pkakelas@gmail.com </p>
 			
 				<?php
-					include '../views/footer.php'; 
+					include 'views/footer.php'; 
 				?>
 			</body>
 		</html>

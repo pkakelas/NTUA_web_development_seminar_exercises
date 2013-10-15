@@ -1,9 +1,9 @@
 <?php			
 
-	function controller_home() {
+	function  FileCreateView() {
 		include 'views/home.php';
 	}
 		
-	controller_home();
+	fileCreateView();
 
 ?>

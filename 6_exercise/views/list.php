@@ -25,7 +25,7 @@
 					}
 					echo '</ul>';
 				?>
-				<p id="bth"> <a href="index.php?resource=home"> Back to home </a> </p>
+				<p id="bth"> <a href="index.php?resource=home&method=create"> Back to home </a> </p>
 				<?php 
 					include 'views/footer.php'; 
 				?>

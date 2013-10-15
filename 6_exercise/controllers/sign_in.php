@@ -1,6 +1,6 @@
 <?php 
 	
-	function controller_sign_in($username, $password) {
+	function userCheck($username, $password) {
 		include 'models/sessions.php';
 		include 'models/user.php';
 		include 'models/sql.php';
@@ -14,7 +14,7 @@
 		}	
 	}
 	
-	controller_sign_in($_POST["username2"], $_POST["password2"]);
+	userCheck($_POST["username2"], $_POST["password2"]);
 		
 ?>
 		

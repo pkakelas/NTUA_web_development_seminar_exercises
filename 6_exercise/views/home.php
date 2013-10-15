@@ -20,7 +20,7 @@
 						<p><textarea cols="40" rows="5" name="description"> Say some things about the file you want to upload !!</textarea> </p>
 						<p> <input type="submit" name="submit" value="Submit" /> </p>
 					</form>
-					<p id="lists_ref" ><a href="index.php?resource=list"> Or check out whatever other users have uploaded. </a> </p>
+					<p id="lists_ref" ><a href="index.php?resource=list&method=read"> Or check out whatever other users have uploaded. </a> </p>
 				</div>
 				<?php 
 					include 'views/footer.php' 

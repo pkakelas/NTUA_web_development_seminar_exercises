@@ -1,6 +1,6 @@
 <?php
 	
-	function controller_download($name) {
+	function fileGet($name) {
 		$name = basename($_GET['name']);
 		$filepath = "/home/dimitris/test/";
 		$name = basename($_GET["name"]);
@@ -50,6 +50,6 @@
 		readfile($filename);
 	}
 	
-	controller_download($_GET['name']);
+	fileGet($_GET['name']);
 
 ?>

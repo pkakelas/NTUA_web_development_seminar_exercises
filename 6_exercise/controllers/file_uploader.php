@@ -1,9 +1,21 @@
 <?php 
 		
-	function controller_file_uploader($filename, $username, $description, $tmp_name, $size, $type) {
+	function fileCreate($filename, $username, $description, $tmp_name, $size, $type) {
+		
+		function name_correct($filename) {
+			$filename = strtolower($filename);
+			$filename = str_replace(" ", "_", $filename);  
+			return $filename;
+		}
+		function valid_file_extension($filename) {
+			$allowed_ext = array('txt', 'htm', 'html', 'flv', 'swf', 'flv', 'png', 'jpeg', 'jpe', 'jpg', 'gif', 				'ico', 'bmp', 'tif', 'tiff', 'svg', 'svgz', 'zip', 'rar', 'exe', 'msi', 'cab', 'mp3', 'mov', 'pdf', 				'psd', 'rtf', 'doc', 'xls', 'ppt', 'odf', 'odt');
+			$file_ext = substr($filename, strpos($filename,'.'), strlen($filename) - 1); 
+			$file_ext = str_replace(".", "", $file_ext);
+			return in_array($file_ext, $allowed_ext);
+		}
+		
 		include 'models/data.php';
 		include 'models/sessions.php';
-		include 'controllers/file_upload_functions.php';
 		$target_path = "/home/dimitris/test/$filename";
 		$name = name_correct($filename);
 		if (!file_exists($tmp_name)){
@@ -27,7 +39,7 @@
 		}	
 	}
 
-	Controller_file_uploader($_FILES['file']['name'], $_SESSION['username'], $_POST['description'], $_FILES['file']['tmp_name'],  $_FILES['file']['size'], $_FILES['file']['type']);
+	fileCreate($_FILES['file']['name'], $_SESSION['username'], $_POST['description'], $_FILES['file']['tmp_name'],  $_FILES['file']['size'], $_FILES['file']['type']);
 
 ?>
 	

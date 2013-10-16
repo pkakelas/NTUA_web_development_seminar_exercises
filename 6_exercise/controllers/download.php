@@ -12,7 +12,7 @@
 			'htm' => 'text/html',
 			'html' => 'text/html',
 			'flv' => 'video/x-flv',
-			'png' => 'image/png',	// images
+			'png' => 'image/png', // images
 			'jpe' => 'image/jpeg',
 			'jpeg' => 'image/jpeg',
 			'jpg' => 'image/jpeg',
@@ -21,20 +21,20 @@
 			'ico' => 'image/vnd.microsoft.icon',
 			'tiff' => 'image/tiff',
 			'tif' => 'image/tiff',
-			'zip' => 'application/zip',	// archives
+			'zip' => 'application/zip', // archives
 			'rar' => 'application/x-rar-compressed',
 			'exe' => 'application/x-msdownload',
 			'msi' => 'application/x-msdownload',
-			'mp3' => 'audio/mpeg',	// audio/video
+			'mp3' => 'audio/mpeg', // audio/video
 			'qt' => 'video/quicktime',
 			'mov' => 'video/quicktime',
-			'pdf' => 'application/pdf',	// adobe
+			'pdf' => 'application/pdf', // adobe
 			'psd' => 'image/vnd.adobe.photoshop',
-			'doc' => 'application/msword',	// ms office
+			'doc' => 'application/msword', // ms office
 			'rtf' => 'application/rtf',
 			'xls' => 'application/vnd.ms-excel',
 			'ppt' => 'application/vnd.ms-powerpoint',
-			'odt' => 'application/vnd.oasis.opendocument.text',	// open office
+			'odt' => 'application/vnd.oasis.opendocument.text', // open office
 			'ods' => 'application/vnd.oasis.opendocument.spreadsheet',
 		);
 		if (isset($extension_to_type[$file_ext])) {

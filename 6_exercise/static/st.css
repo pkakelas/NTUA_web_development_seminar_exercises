@@ -102,9 +102,13 @@ input {
 
 #tick {
 	display: none
+	width: 16px;
+	height: 16px;
 }
 
 #cross {
-	display: none
+	display: none;
+	width: 16px;
+	height: 16px;
 }
 	

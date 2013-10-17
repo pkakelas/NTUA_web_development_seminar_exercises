@@ -2,7 +2,7 @@
 
     class user_controller {
 	
-        public static function Create($name, $surname, $age, $email, $username, $password) {
+        public static function create($name, $surname, $age, $email, $username, $password) {
             include 'models/sessions.php';
     		include 'models/user.php';
 		    $problems = register_validation($name, $surname, $age, $username, $password, $email);
@@ -26,11 +26,11 @@
             include 'views/userCreate.php';
 	    }
         
-        public static function sign_in($username, $password) {
+        public static function signin($username2, $password2) {
 		    include 'models/sessions.php';
 		    include 'models/user.php';
 		    include 'models/sql.php';
-		    $result = sign_in($username, $password);
+		    $result = sign_in($username2, $password2);
 		    if ($result) {
 		    	$_SESSION['username'] = $username;
 		    	header('Location: index.php?resource=home');
@@ -40,7 +40,7 @@
 		    }	
 	    }
 
-        public static function sign_in_view() {
+        public static function signin_view() {
             include 'views/userCheckForm.php';
 	    }
     

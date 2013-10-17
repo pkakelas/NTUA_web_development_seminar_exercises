@@ -12,7 +12,7 @@
 			<body>
 				<?php
 					include 'views/title.php';
-					echo "<p> The file $name has been uploaded. Click <a href='index.php?resource=home'> here </a> to go to the previous page. </p>" ;
+					echo "<p> The file $name has been uploaded. Click <a href='index.php?resource=file&method=create'> here </a> to go to the previous page. </p>" ;
 					include 'views/footer.php';
 				?>
 			</body>

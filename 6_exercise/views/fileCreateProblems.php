@@ -21,7 +21,7 @@
 					}
 				?>
 				</ul>
-				<p> Please <a href="index.php?resource=home"> Try again </a> </p>	
+				<p> Please <a href="index.php?resource=file&method=create"> Try again </a> </p>	
 				<?php
 					include 'views/footer.php'; 
 				?>

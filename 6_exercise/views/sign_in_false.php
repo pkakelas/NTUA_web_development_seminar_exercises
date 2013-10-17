@@ -17,7 +17,7 @@
 						<li> you have already registered  </li>
 						<li> you haven't mispelled your username or your password</li>
 					</ol>
-					<p> please <a href="index.php?resource=main">Try again</a></p>
+					<p> please <a href="index.php?resource=user&method=signin">Try again</a></p>
 					<p>If the problem continues, please contact me: pkakelas@gmail.com </p>
 			
 				<?php

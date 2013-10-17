@@ -12,7 +12,7 @@
 				<?php
 					include '../views/title.php'; 
 				?>
-					<p> Welcome back <? echo $username ?>. Click <a href = '../controllers/home.php?'>here </a> to begin your journey </p>
+					<p> Welcome back <? echo $username ?>. Click <a href = '../controllers/home.php?resource=file&method=create?'>here </a> to begin your journey </p>
 				<?php
 					include '../views/footer.php';
 				?>

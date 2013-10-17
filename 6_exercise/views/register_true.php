@@ -13,7 +13,7 @@
 					include 'views/title.php';
 				 ?>
 				<p> Good Job! From now on you are a "boom uploder" user. 
-				Click <a href="index.php?resource=home">here </a> to begin your journey </p>
+				Click <a href="index.php?resource=file&method=create">here </a> to begin your journey </p>
 				<?php			
 					include 'views/footer.php';
 				?>

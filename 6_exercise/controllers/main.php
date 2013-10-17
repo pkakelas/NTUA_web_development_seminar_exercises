@@ -10,7 +10,7 @@
 		include 'header.php';
 		$methods = array(
 			'create' => 1,
-			'signin' => 0,
+			'signin' => 1,
 			'listing' => 0,
 		);
 		if (isset($_GET['resource'])) {

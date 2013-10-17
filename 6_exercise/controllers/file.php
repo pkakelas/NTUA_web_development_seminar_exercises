@@ -2,7 +2,7 @@
 
 	 class file_controller {
 
-		public static function Create($filename, $username, $description, $tmp_name, $size, $type) {
+		public static function create($filename, $username, $description, $tmp_name, $size, $type) {
 			include 'models/data.php';
 			include 'models/sessions.php';
 			$problems = array();
@@ -83,7 +83,7 @@
 			readfile($filename);
 		}
 		
-		public static function Read() {
+		public static function listing() {
 			include 'models/readlist.php';
 			$names = readlist();
 			include 'views/list.php';

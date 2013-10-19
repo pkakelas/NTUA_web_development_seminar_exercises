@@ -6,7 +6,7 @@
 
         <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
             <?php 
-                include 'views/head.php';
+                view("head");
             ?>
             <body>  
                 <h1> Booooooooom Uploader. Share everything you want!  </h1>
@@ -23,7 +23,7 @@
                     <p id="lists_ref" ><a href="index.php?resource=file&method=listing"> Or check out whatever other users have uploaded. </a> </p>
                 </div>
                 <?php 
-                    include 'views/footer.php' 
+                    view("footer") 
                 ?>
             </body>
         </html>

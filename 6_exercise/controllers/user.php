@@ -34,16 +34,16 @@
                 $result = register($name, $surname, $age, $username, $password, $email); 
                 if ($result) {
                     $_SESSION['username'] = $username;
-                    include 'views/register_true.php';
+                    view("register_true");
                 }
                 else {
-                    include 'views/register_false_query.php';
+                    view("register_false_query");
                 }
             }
         }
         
         public static function create_view() {
-            include 'views/user_create.php';
+            view("user_create");
         }
    }
 

@@ -20,7 +20,7 @@
         $method = '';
     }
     if (!isset($methods[$method])) {
-        die(include 'views/main.php');
+        die(view("main"));
     }
     switch ($_SERVER['REQUEST_METHOD']){
         case 'POST':

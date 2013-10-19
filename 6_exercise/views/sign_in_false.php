@@ -6,11 +6,11 @@
 
         <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
             <?php 
-                include 'views/head.php';
+                view("head");
             ?>
             <body>
                 <?php
-                    include 'views/title.php';
+                    view("title");
                 ?>
                     <p> I am afraid your Credentials could not be verified. Please make sure that:</p>
                     <ol>
@@ -21,7 +21,7 @@
                     <p>If the problem continues, please contact me: pkakelas@gmail.com </p>
             
                 <?php
-                    include 'views/footer.php'; 
+                    view("footer"); 
                 ?>
             </body>
         </html>

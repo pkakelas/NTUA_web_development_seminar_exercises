@@ -12,11 +12,11 @@
                 header('Location: index.php?resource=file&method=create');
             }
             else {
-                include 'views/sign_in_false.php';  
+                view("sign_in_false");  
             }   
         }
         
         public static function create_view() {
-            include 'views/sign_in.php';
+            view("sign_in");
         }
     }

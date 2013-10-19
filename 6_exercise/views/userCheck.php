@@ -6,11 +6,11 @@
 
         <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
             <?php 
-                include 'views/head.php';
+                view("head");
             ?>
             <body>
                 <?php
-                    include 'views/title.php'; 
+                    view("title"); 
                 ?>
                 <div id='sign_in'>
                     <h2> Already a Boom Uploader user ?</h2>

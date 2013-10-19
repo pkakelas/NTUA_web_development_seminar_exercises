@@ -7,13 +7,13 @@
         <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
             <?php 
                 include 'models/sessions.php';
-                include 'views/head.php';
+                view("head");
             ?>
             <body>
                 <?php
-                    include 'views/title.php';
+                    view("title");
                     echo "<p> The file $name has been uploaded. Click <a href='index.php?resource=file&method=create'> here </a> to go to the previous page. </p>" ;
-                    include 'views/footer.php';
+                    view("footer");
                 ?>
             </body>
         </html>

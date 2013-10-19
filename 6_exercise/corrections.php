@@ -2,12 +2,12 @@
 //π.χ. έστω ότι έχεις το αρχείο controllers/foo.php
 //και ότι αυτό έχει τα περιεχόμενα:
 //<?php
-//    include 'views/foo.php';
+//    view("foo");
 //?>
 //τότε αυτό θα αλλάξει σε:
 //<?php
 //    function ControllerFoo() {
-//        include 'views/foo.php';
+//        view("foo");
 //    }
 //?>
 //όπου μέσα στο function θα μπει ΟΛΟΣ ο κώδικας του controller

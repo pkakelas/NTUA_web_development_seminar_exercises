@@ -6,11 +6,11 @@
 
         <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
             <?php 
-                include 'views/head.php';
+                view("head");
             ?>
             <body>
                 <?php
-                    include 'views/title.php'; 
+                    view("title"); 
                 ?>
                 <div id='register'>
                     <h2> First Time visiting my site ? </h2>

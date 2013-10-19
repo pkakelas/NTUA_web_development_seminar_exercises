@@ -1,5 +1,5 @@
 <?php
-	function view($name) {
+    function view($name) {
         include "views/$name.php";
     }
 ?>

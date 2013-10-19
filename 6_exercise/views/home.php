@@ -12,8 +12,8 @@
 				<h1> Booooooooom Uploader. Share everything you want!  </h1>
 				<div class='uploaded'>
 					<p>Welcome<?php echo $username; ?>. If you want to upload a file to our servers, in order to 
-							share it with other users, please fill in all the above forms. The file must be less than 2mb .. </p>
-					<form id="forms" action="index.php?resource=file&method="create" enctype="multipart/form-data" >
+					share it with other users, please fill in all the above forms. The file must be less than 2mb .. </p>
+					<form id="forms" action="index.php?resource=file&method=create" enctype="multipart/form-data" method="post">
 						<p> File :</p>
 						<p><input type="file" name="file" id="file" /> </p>
 						<p>Description about the file :</p> 

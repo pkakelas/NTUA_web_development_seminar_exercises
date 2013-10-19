@@ -33,7 +33,7 @@
 			}	
 		}
 	
-		public static function file_get($name) {
+		public static function get($name) {
 			$name = basename($_GET['name']);
 			$filepath = "/home/dimitris/test/";
 			$name = basename($_GET["name"]);
@@ -83,7 +83,7 @@
 			readfile($filename);
 		}
 		
-		public static function listing() {
+		public static function listing_view() {
 			include 'models/readlist.php';
 			$names = readlist();
 			include 'views/list.php';

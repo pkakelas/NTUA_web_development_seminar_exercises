@@ -1,9 +1,0 @@
-<?php			
-
-	function  userCheckView() {
-		include 'views/userCheck.php';
-	}
-		
-	userCheckView();
-
-?>

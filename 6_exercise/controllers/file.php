@@ -3,11 +3,11 @@
 	 class file_controller {
 
 		public static function create($filename, $username, $description, $tmp_name, $size, $type) {
-			include 'models/data.php';
-			include 'models/sessions.php';
+			include 'models/file.php';
+			include 'models/session.php';
 			$problems = array();
 			$target_path = "/home/dimitris/test/$filename";
-			$name = nameCorrect($filename);
+			$name = name_correct($filename);
 			if (!file_exists($tmp_name)){
 				$problems[] = "You haven't chosen any files yet.";
 			}
@@ -22,7 +22,7 @@
 			}
 			else {
 				move_uploaded_file($tmp_name, $target_path);
-				$result = file_upload($username, $name, $size, $type, $description, $target_path);
+				$result = file_model::create($username, $name, $size, $type, $description, $target_path);
 				if ($result) {			
 					$_SESSION['name'] = $name;
 					include 'views/upload_true.php';
@@ -84,8 +84,8 @@
 		}
 		
 		public static function listing_view() {
-			include 'models/readlist.php';
-			$names = readlist();
+			include 'models/file.php';
+			$names = file_model::listing();
 			include 'views/list.php';
 		}
 		
@@ -108,6 +108,4 @@
 			$file_ext = str_replace(".", "", $file_ext);
 			return in_array($file_ext, $allowed_ext);
 		}
-		
-		
 	}

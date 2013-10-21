@@ -4,7 +4,7 @@
 	
 		public static function create($name, $surname, $age, $email, $username, $password) {
 			function register_validation($name, $surname, $age, $username, $password, $email) {
-				$exist = username_exists($username);
+				$exist = user_model::username_exists($username);
 				$problems = array();
 				if ($name == "" || $surname == "" || $age == "" || $password == "" || $username == "" || $email == "") {
 					$problems[] = "All forms are required";
@@ -23,7 +23,7 @@
 				}
 				return $problems;
 			}
-			include 'models/sessions.php';
+			include 'models/session.php';
     		include 'models/user.php';
 			$problems = register_validation($name, $surname, $age, $username, $password, $email);
 			$arrlength = count($problems);
@@ -31,7 +31,7 @@
 				include 'views/register_problems.php';
 			}
 			else {
-				$result = register($name, $surname, $age, $username, $password, $email); 
+				$result = user_model::register($name, $surname, $age, $username, $password, $email); 
 				if ($result) {
 					$_SESSION['username'] = $username;
 					include 'views/register_true.php';
@@ -45,7 +45,7 @@
 		public static function create_view() {
 			include 'views/user_create.php';
 		}
-   }
+    }
 
 ?>	
 	

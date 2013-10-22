@@ -1,15 +1,19 @@
 <?php
     
+    include 'models/query_helper.php';
+
     class file_model {
 
         public static function create($username, $name, $size, $type, $description, $target_path) {
             include 'models/sql.php';
             $description = addslashes($description);
-            $sql =	"INSERT INTO 
+            $query = "INSERT INTO 
                         `data (`user`, `filename` ,`filesize`, `filetype`, `description`, `saved`)
-                    VALUES 
-                        ('$username', '$name', '$size', '$type', '$description', '$target_path')";	
-            if (mysqli_query($con, $sql)) {	
+                      VALUES 
+                        (?, ?, ?, ?, ?, ?)";
+            $array = array($username, $password, $size, $type, $description, $target_path);            
+            $sql = prepared_query($query, $array ); 
+            if ($sql) {	
                 return true;
             }
         }

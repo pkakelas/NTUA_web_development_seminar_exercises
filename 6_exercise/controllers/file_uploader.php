@@ -1,6 +1,6 @@
 <?php 
 		
-	function fileCreate($filename, $username, $description, $tmp_name, $size, $type) {
+	function file_create($filename, $username, $description, $tmp_name, $size, $type) {
 		
 		function name_correct($filename) {
 			$filename = strtolower($filename);
@@ -32,7 +32,7 @@
 			$problems[] = "The file exists. Please upload another file, or change the name of your file.";
 		} 
 		if (count($problems)) {
-			include 'views/fileCreateProblems.php';
+			include 'views/file_create_problems.php';
 		}
 		else {
 			move_uploaded_file($tmp_name, $target_path);
@@ -47,7 +47,7 @@
 		}	
 	}
 
-	fileCreate($_FILES['file']['name'], $_SESSION['username'], $_POST['description'], $_FILES['file']['tmp_name'],  $_FILES['file']['size'], $_FILES['file']['type']);
+	file_create($_FILES['file']['name'], $_SESSION['username'], $_POST['description'], $_FILES['file']['tmp_name'],  $_FILES['file']['size'], $_FILES['file']['type']);
 
 ?>
 	

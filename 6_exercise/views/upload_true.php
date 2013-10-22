@@ -16,9 +16,8 @@
 					include 'views/footer.php';
 				?>
 			</body>
-		</html>
-
-<?php } 
+		</html> <?php
+    } 
 
 	view_upload_true($_SESSION['name']);
 

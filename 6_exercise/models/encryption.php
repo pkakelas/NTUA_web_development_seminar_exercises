@@ -1,11 +1,10 @@
 <?php
 
-    class encryption {
+    class Encryption {
       
         public static function authenticate_check($password, $salt, $hash) {
             $user = hash('sha256', $password . $salt);
-            $sql = $hash;
-            if ($user == $sql) {
+            if ($user == $hash) {
                 return true;
             }
         }
@@ -17,15 +16,15 @@
         }   
         
         public static function encrypt($password) {
-            $salt = encryption::randomsalting();
+            $salt = Encryption::randomsalting();
             $hash = hash('sha256', $password . $salt);
             return array(
-                      "password" => "$hash", 
-                      "salt" => "$salt"
+                      "password" => $hash, 
+                      "salt" => $salt
                    );  
         }         
     
     }         
 
 ?>
-    
+   

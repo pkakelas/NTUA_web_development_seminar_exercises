@@ -6,7 +6,7 @@
     class UserModel {
         
         public static function register($name,  $surname,  $age,  $username,  $password, $email) {	
-            $enc_result = encryption::encrypt($password);
+            $enc_result = Encryption::encrypt($password);
             $password = $enc_result['password'];
             $salt = $enc_result['salt'];
             $sql = prepared_query("INSERT INTO
@@ -30,7 +30,7 @@
                 die("problem");	
             }	
             $row = mysqli_fetch_array($sql);
-            $result = encryption::authenticate_check($password, $row['salt'], $row['password']);
+            $result = Encryption::authenticate_check($password, $row['salt'], $row['password']);
             if ($result) {
                 return true;	
             }

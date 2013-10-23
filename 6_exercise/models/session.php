@@ -3,7 +3,6 @@
     class session_model {
         
         public static function create($username, $password) {  // The function that makes the sign in sql query to the db.
-            include 'models/sql.php';
             $query =	"SELECT
                         password, salt
                      FROM

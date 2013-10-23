@@ -6,7 +6,6 @@
 
         public static function create($username, $name, $size, $type, $description, $target_path) {
             include 'models/sql.php';
-            $description = addslashes($description);
             $query = "INSERT INTO 
                         `data (`user`, `filename` ,`filesize`, `filetype`, `description`, `saved`)
                       VALUES 

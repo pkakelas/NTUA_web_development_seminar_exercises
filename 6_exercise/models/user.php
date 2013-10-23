@@ -6,16 +6,13 @@
         
         public static function register($name,  $surname,  $age,  $username,  $password, $email) {	
             include 'models/sql.php'; 	//The function that adds a new user. It doesn't contain the restriction.
-            $name = addslashes($name); 		
-            $surname = addslashes($surname);		
-            $age = addslashes($age);
-            $email = addslashes($email);
-            $username = addslashes($username);
             $enc_result = user_model::encryption($password);
             $password = $enc_result['password'];
             $salt = $enc_result['salt'];
-            query = "INSERT INTO
+            $query = "INSERT INTO
                         `users` ( `name`, `surname`, `age`, `username`, `password`, `salt`, `email` )
+                    VALUES
+                        (?, ?, ?, ?, ?, ?, ?)";
             $array = array($name, $surname, $age, $username, $password, $salt, $email);
             $sql = prepared_query($query, $array);
             if ($sql) {

@@ -1,6 +1,9 @@
 <?php 
 
-	$methods = array(
+    
+    session_start();  
+
+    $methods = array(
 		'create' => 1,
 		'sign_in' => 1,
 		'listing' => 1,
@@ -35,7 +38,8 @@
 	$resource = basename( $resource );
 	$filename = 'controllers/' . $resource . '.php';
 	include $filename;
-	$controllername = $resource  . '_controller';
+    $resource = ucwords(strtolower($resource));
+	$controllername = $resource  . 'Controller';
 	$methodname = $method;
 	$reflection = new ReflectionMethod($controllername, $methodname);
 	$parameters = $reflection->getParameters();
@@ -52,21 +56,4 @@
 	call_user_func_array(array($controllername, $methodname), $arguments);
 		
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

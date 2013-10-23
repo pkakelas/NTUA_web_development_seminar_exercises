@@ -2,22 +2,17 @@
     
     include 'models/query_helper.php';
 
-    class file_model {
+    class FileModel {
 
         public static function create($username, $name, $size, $type, $description, $target_path) {
-            include 'models/sql.php';
-            $query = "INSERT INTO 
-                        `data (`user`, `filename` ,`filesize`, `filetype`, `description`, `saved`)
-                      VALUES 
-                        (?, ?, ?, ?, ?, ?)";
-            $array = array($username, $password, $size, $type, $description, $target_path);            
-            $sql = prepared_query($query, $array ); 
+            $sql = prepared_query("INSERT INTO 
+                                      `data (`user`, `filename` ,`filesize`, `filetype`, `description`, `saved`)
+                                   VALUES 
+                                      (?, ?, ?, ?, ?, ?)", array($username, $password, $size, $type, $description, $target_path));
             if ($sql) {	
                 return true;
             }
         }
-   
-        
     
         public static function listing() {
             $dir = opendir('/home/dimitris/test/'); 
@@ -30,6 +25,26 @@
             closedir($dir); 
             return $names;
         }
-    }   	
+        
+        public static function mime_type($file_ext) {
+            $sql = prepared_query("SELECT
+                                      mime_type 
+                                   FROM
+                                      mime_types
+                                   WHERE 
+                                      file_ext = ?", array($file_ext)); 
+            if (!$sql) {
+                die("problem");	
+            }
+            $res = mysqli_fetch_array($sql);
+            return $res[0];
+        }
+
+        public static function read($filename) {
+            readfile($filename);
+        }
+    }
+
+
        
 ?>

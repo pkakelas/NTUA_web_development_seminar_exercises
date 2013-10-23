@@ -1,10 +1,10 @@
 <?php
 
-	class user_controller {
+	class UserController {
 	
 		public static function create($name, $surname, $age, $email, $username, $password) {
 			function register_validation($name, $surname, $age, $username, $password, $email) {
-				$exist = user_model::username_exists($username);
+				$exist = UserModel::username_exists($username);
 				$problems = array();
 				if ($name == "" || $surname == "" || $age == "" || $password == "" || $username == "" || $email == "") {
 					$problems[] = "All forms are required";
@@ -23,7 +23,6 @@
 				}
 				return $problems;
 			}
-			include 'models/session.php';
     		include 'models/user.php';
 			$problems = register_validation($name, $surname, $age, $username, $password, $email);
 			$arrlength = count($problems);
@@ -31,7 +30,7 @@
 				include 'views/register_problems.php';
 			}
 			else {
-				$result = user_model::register($name, $surname, $age, $username, $password, $email); 
+				$result = UserModel::register($name, $surname, $age, $username, $password, $email); 
 				if ($result) {
 					$_SESSION['username'] = $username;
 					include 'views/register_true.php';

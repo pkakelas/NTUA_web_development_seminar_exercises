@@ -1,35 +1,48 @@
 <?php
   
     include 'models/query_helper.php';
+    include 'models/encryption.php';
 
-    class user_model {
+    class UserModel {
         
         public static function register($name,  $surname,  $age,  $username,  $password, $email) {	
-            include 'models/sql.php'; 	//The function that adds a new user. It doesn't contain the restriction.
-            $enc_result = user_model::encryption($password);
+            $enc_result = encryption::encrypt($password);
             $password = $enc_result['password'];
             $salt = $enc_result['salt'];
-            $query = "INSERT INTO
-                        `users` ( `name`, `surname`, `age`, `username`, `password`, `salt`, `email` )
-                    VALUES
-                        (?, ?, ?, ?, ?, ?, ?)";
-            $array = array($name, $surname, $age, $username, $password, $salt, $email);
-            $sql = prepared_query($query, $array);
+            $sql = prepared_query("INSERT INTO
+                                     `users` ( `name`, `surname`, `age`, `username`, `password`, `salt`, `email` )                   
+                                   VALUES
+                                      (?, ?, ?, ?, ?, ?, ?)", array($name, $surname, $age, $username,
+                                                                    $password, $salt, $email));
             if ($sql) {
                 return true;
             }
         }	
         
+        public static function authenticate($username, $password) {  // The function that makes the sign in sql query to the db.
+            $sql = prepared_query("SELECT
+                                      password, salt
+                                   FROM
+                                      users 
+                                   WHERE 
+                                      username = ?", array($username));            
+            if (!$sql) {
+                die("problem");	
+            }	
+            $row = mysqli_fetch_array($sql);
+            $result = encryption::authenticate_check($password, $row['salt'], $row['password']);
+            if ($result) {
+                return true;	
+            }
+        }
+
         public static function username_exists($username) { 
-            include 'models/sql.php'; // The function that makes the sign in sql query to the db.
-            $query = "SELECT 
-                         name, surname
-                      FROM 
-                         users
-                      WHERE
-                         username = ?";	
-            $array = array($username);
-            $sql = prepared_query($query, $array);
+            $sql = prepared_query("SELECT
+                                      name, surname
+                                   FROM
+                                      users
+                                   WHERE
+                                      username = ?", array($username));
             if (!$sql) {
                 echo "problem";	
             }	
@@ -41,22 +54,7 @@
                 return false;
             }
         }
-
-                    
-        public static function randomsalting() {                                                                         $max = 32;
-            $salt = openssl_random_pseudo_bytes($max);
-            return $salt;
-        }   
-        
-        function encryption($password) {
-            $salt = user_model::randomsalting();
-            $hash = hash('sha256', $password . $salt);
-            return array(
-                      "password" => "$hash", 
-                      "salt" => "$salt"
-                   );  
-        }         
-    }         
+    }
 
 ?>
 

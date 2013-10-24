@@ -6,11 +6,11 @@
 
 		<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">	
 			<?php 
-				include 'views/head.php';
+                view("head");				
 			?>
 			<body>
 				<?php
-					include 'views/title.php';
+					view("title");
 				?>
 				<h2> Some problems occured : </h2>
 				<ul>
@@ -23,8 +23,8 @@
 				</ul>
 				<p> Please <a href="index.php?resource=file&method=create"> Try again </a> </p>	
 				<?php
-					include 'views/footer.php'; 
-				?>
+			        view("footer");
+                ?>
 			</body>
 		</html>
 <?php }

@@ -6,16 +6,16 @@
 
 		<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">	
 			<?php 
-				include 'views/head.php';
+			    view("head");    	
 			?>
 			<body>
 				<?php
-					include 'views/title.php';
+					view("title");
 				 ?>
 				<p> Good Job! From now on you are a "boom uploder" user. 
 				Click <a href="index.php?resource=file&method=create">here </a> to begin your journey </p>
 				<?php			
-					include 'views/footer.php';
+				    view("footer");
 				?>
 			</body>
 		</html> 

@@ -1,7 +1,7 @@
 <?php 
-
     
     session_start();  
+    include 'helpers/view.php';
 
     $methods = array(
 		'create' => 1,
@@ -10,7 +10,7 @@
 		'get' => 0
 	);
 	if (isset( $_GET[ 'resource' ])) {
-		$resource = $_GET['resource']; 
+        $resource = $_GET['resource']; 
 	}
 	else {
 		$resource = '';
@@ -26,7 +26,7 @@
 	}
 	switch ($_SERVER['REQUEST_METHOD']){
 		case 'POST':
-				$http_vars = $_POST;
+                $http_vars = $_POST;
 				break;
 		case 'GET':
 				$http_vars = $_GET;
@@ -45,8 +45,8 @@
 	$parameters = $reflection->getParameters();
 	$arguments = array();
 	foreach ($parameters as $parameter) {
-		if (isset($http_vars[$parameter->name])) {
-			$arguments[] = $http_vars[$parameter->name];
+        if (isset($http_vars[$parameter->name])) {
+            $arguments[] = $http_vars[$parameter->name];
 		}
 		else {
 			$arguments[] = $parameter->getDefaultValue();

@@ -18,14 +18,14 @@
 				$problems[] = "The file exists. Please upload another file, or change the name of your file.";
 			} 
 			if (count($problems)) {
-				include 'views/fileCreateProblems.php';
+			    view("file_create_problems");	
 			}
 			else {
 				move_uploaded_file($tmp_name, $target_path);
 				$result = file_model::create($username, $name, $size, $type, $description, $target_path);
 				if ($result) {			
 					$_SESSION['name'] = $name;
-					include 'views/upload_true.php';
+			        view("upload_true");
 				}
 				else  { 
 					echo "shit";
@@ -58,11 +58,11 @@
 		public static function listing_view() {
 			include 'models/file.php';
 			$names = FileModel::listing();
-			include 'views/list.php';
-		}
+		    include 'views/list.php';	
+		
 		
 		public static function create_view() {
-			include 'views/home.php';
+			view("home");
 		}
 
 		private static function name_correct($filename) {

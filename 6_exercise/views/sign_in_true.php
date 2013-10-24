@@ -6,15 +6,15 @@
 
 		<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">	
 			<?php 
-				include '../views/head.php';
+				view("head");
 			?>
 			<body>
 				<?php
-					include '../views/title.php'; 
+				    view("title"); 
 				?>
 					<p> Welcome back <? echo $username ?>. Click <a href = '../controllers/home.php?resource=file&method=create?'>here </a> to begin your journey </p>
 				<?php
-					include '../views/footer.php';
+					view("footer");
 				?>
 			</body>
 		</html> 

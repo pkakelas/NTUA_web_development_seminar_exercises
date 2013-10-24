@@ -6,16 +6,16 @@
 
 		<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">	
 			<?php 
-				include '../views/head.php';
+	            view("head");			
 			?>
 			<body>
 				<?php
-					include '../views/title.php';
+					view("title");
 				?>
 					<p> I am afraid you must have logged in, in order to proceed to this page.</p>
 					<p> Click <a href="index.php?resource=user&method=signin">here</a> to log in </p>
 				<?php
-					include '../views/footer.php'; 
+				    view("footer"); 
 				?>
 			</body>
 		</html>

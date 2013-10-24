@@ -6,15 +6,15 @@
         
         <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">	
             <?php
-                include 'views/head.php';
+                view("head");
             ?>
             <body> 
                 <?php
-                    include 'views/title.php';
+                    view("title");
                 ?>
                 <p>There was an error running the query.Please <a href="index.php"> Try again </a> or contact me: pkakelas@gmail.com</p>			
                 <?php
-                    include 'views/footer.php';
+                    view("footer");
                 ?>	
             </body>
         </html> <?php 

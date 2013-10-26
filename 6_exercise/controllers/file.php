@@ -58,7 +58,9 @@
 		public static function listing_view() {
 			include 'models/file.php';
 			$names = FileModel::listing();
-		    include 'views/list.php';	
+		    //include 'views/list.php';	
+            view("list");
+        }
 		
 		
 		public static function create_view() {

@@ -5,9 +5,7 @@
 
     $methods = array(
 		'create' => 1,
-		'sign_in' => 1,
-		'listing' => 1,
-		'get' => 0
+		'listing' => 1
 	);
 	if (isset( $_GET[ 'resource' ])) {
         $resource = $_GET['resource']; 

@@ -1,5 +1,6 @@
 <?php 
  
-    $con =  mysqli_connect("localhost", "akelas", "akelas", "boom_uploader"); 
+    include 'settings.php';
+    $con =  mysqli_connect($hostname, $username, $password, $db); 
 
 ?>

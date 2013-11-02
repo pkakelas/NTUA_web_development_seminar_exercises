@@ -27,21 +27,21 @@
 			$problems = register_validation($name, $surname, $age, $username, $password, $email);
 			$arrlength = count($problems);
 			if (count($problems)) {
-				include 'views/register_problems.php';
+				view("register_problems", "html")
 			}
 			else {
 				$result = UserModel::register($name, $surname, $age, $username, $password, $email); 
 				if ($result) {
 					$_SESSION['username'] = $username;
-				    view("home");
+				    view("home", "html");
                 }
 				else {
-					view("register_false_query");				}
+					view("register_false_query", "html");				}
 			}
 		}
         
 		public static function create_view() {
-	        view("user_create");
+	       view("user_create", "html"); 
 		}
     }
 

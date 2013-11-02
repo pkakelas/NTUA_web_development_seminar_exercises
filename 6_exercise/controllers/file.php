@@ -25,7 +25,7 @@
 				$result = file_model::create($username, $name, $size, $type, $description, $target_path);
 				if ($result) {			
 					$_SESSION['name'] = $name;
-			        view("upload_true");
+			        view("upload_true", "html");
 				}
 				else  { 
 					echo "shit";
@@ -59,12 +59,12 @@
 			include 'models/file.php';
 			$names = FileModel::listing();
 		    //include 'views/list.php';	
-            view("list");
+            view("list", "html");
         }
 		
 		
 		public static function create_view() {
-			view("home");
+			view("home", "html");
 		}
 
 		private static function name_correct($filename) {

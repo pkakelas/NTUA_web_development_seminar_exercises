@@ -1,7 +1,7 @@
 <?php 
     
     session_start();  
-    include 'helpers/view.php';
+    include 'views/layout.php';
 
     $methods = array(
 		'create' => 1,
@@ -20,7 +20,7 @@
 		$method = '';
 	}
 	if (!isset($methods[$method])) {
-		die(include 'views/main.php');
+        view ("main", "html");	
 	}
 	switch ($_SERVER['REQUEST_METHOD']){
 		case 'POST':

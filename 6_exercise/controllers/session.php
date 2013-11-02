@@ -11,12 +11,12 @@
 		        header('Location: index.php?resource=file&method=create');
 		    }
 		    else {
-		        view("session_create_false");   
+		        view("session_create_false", "html");   
 		    }   
 		}
 		
 		public static function create_view() {
-		    view("session_create");
+		    view("session_create", "html");
 		}
     }
 

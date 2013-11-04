@@ -18,7 +18,10 @@
 				$problems[] = "The file exists. Please upload another file, or change the name of your file.";
 			} 
 			if (count($problems)) {
-			    view("file_create_problems");	
+                $variables = array(
+                    'problems' => $problems
+                );
+			    view("file_create_problems", "html", $variables);	
 			}
 			else {
 				move_uploaded_file($tmp_name, $target_path);
@@ -58,10 +61,16 @@
 		public static function listing_view() {
 			include 'models/file.php';
 			$names = FileModel::listing();
-		    //include 'views/list.php';	
-            view("list", "html");
-        }
-		
+			if ($names) {
+                $variables = array(
+                    'names' => $names
+                );
+                view("list", "html", $variables);
+            }
+            else {
+                view("list_false", "html", $variables);         
+            }
+		}
 		
 		public static function create_view() {
 			view("home", "html");

@@ -3,8 +3,9 @@
     include 'models/query_helper.php';
 
     class FileModel {
-
+    
         public static function create($username, $name, $size, $type, $description, $target_path) {
+            $target_path = "~/htdocs/6_exercise/files";
             $sql = prepared_query("INSERT INTO 
                                       `data (`user`, `filename` ,`filesize`, `filetype`, `description`, `saved`)
                                    VALUES 
@@ -15,7 +16,7 @@
         }
     
         public static function listing() {
-            $dir = opendir('/home/dimitris/test/'); 
+            $dir = opendir("~/htdocs/6_exercise/files"); 
             $names = array();
             while ($read = readdir($dir)) {
                 if ($read != '.' && $read != '..' && $read != 'desktop.ini') {
@@ -23,7 +24,12 @@
                 }
             } 
             closedir($dir); 
-            return $names;
+            if (empty($names)) {
+                return FALSE;
+            }
+            else {
+                return $names;
+            }
         }
         
         public static function mime_type($file_ext) {

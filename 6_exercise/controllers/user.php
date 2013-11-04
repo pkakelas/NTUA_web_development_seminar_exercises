@@ -27,7 +27,10 @@
 			$problems = register_validation($name, $surname, $age, $username, $password, $email);
 			$arrlength = count($problems);
 			if (count($problems)) {
-				view("register_problems", "html")
+                $variables = array(
+                    'problems' => $problems
+                );
+				view("register_problems", "html", $variables);
 			}
 			else {
 				$result = UserModel::register($name, $surname, $age, $username, $password, $email); 

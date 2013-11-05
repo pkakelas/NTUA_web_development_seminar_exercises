@@ -35,8 +35,10 @@
 			else {
 				$result = UserModel::register($name, $surname, $age, $username, $password, $email); 
 				if ($result) {
-					$_SESSION['username'] = $username;
-				    view("home", "html");
+                    $variables = array(
+                        'username' => $_SESSION['username']
+                    ); 
+				    view("home", "html", $variables);
                 }
 				else {
 					view("register_false_query", "html");				}

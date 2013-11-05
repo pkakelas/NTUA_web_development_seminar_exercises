@@ -39,8 +39,7 @@
 		public static function get($name) {
 			include 'models/file.php';
             $name = basename($_GET['name']);
-			$filepath = "/home/dimitris/test/";
-			$name = basename($_GET["name"]);
+			$filepath = "files/";
 			$filename = $filepath . $name;
 			$file_ext = substr($filename, strpos($filename, '.'), strlen($filename) - 1); 
 			$file_ext = str_replace(".", "", $file_ext);

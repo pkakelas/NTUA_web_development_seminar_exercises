@@ -5,7 +5,7 @@
     class FileModel {
     
         public static function create($username, $name, $size, $type, $description, $target_path) {
-            $target_path = "~/htdocs/6_exercise/files";
+            $target_path = "files/";
             $sql = prepared_query("INSERT INTO 
                                       `data (`user`, `filename` ,`filesize`, `filetype`, `description`, `saved`)
                                    VALUES 
@@ -16,14 +16,14 @@
         }
     
         public static function listing() {
-            $dir = opendir("~/htdocs/6_exercise/files"); 
+            $dir = opendir("files/"); 
             $names = array();
             while ($read = readdir($dir)) {
                 if ($read != '.' && $read != '..' && $read != 'desktop.ini') {
                     $names[] = $read;
                 }
             } 
-            closedir($dir); 
+            closedir($dir);
             if (empty($names)) {
                 return FALSE;
             }

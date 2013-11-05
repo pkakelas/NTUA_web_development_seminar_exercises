@@ -7,8 +7,10 @@
 		    include 'models/sql.php';
 		    $result = UserModel::authenticate($username2, $password2);
 		    if ($result) {
-		        $_SESSION['username'] = $username;
-		        header('Location: index.php?resource=file&method=create');
+                $variables = array(
+                    'username' => $_SESSION['username']
+                );
+		        view("home", "html", $variables);
 		    }
 		    else {
 		        view("session_create_false", "html");   
@@ -19,5 +21,3 @@
 		    view("session_create", "html");
 		}
     }
-
-?>	

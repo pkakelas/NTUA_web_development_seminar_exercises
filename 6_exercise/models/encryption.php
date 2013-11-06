@@ -19,12 +19,11 @@
             $salt = Encryption::randomsalting();
             $hash = hash('sha256', $password . $salt);
             return array(
-                      "password" => $hash, 
-                      "salt" => $salt
-                   );  
+                "password" => $hash, 
+                "salt" => $salt
+            );  
         }         
-    
-    }         
+    }          
 
 ?>
    

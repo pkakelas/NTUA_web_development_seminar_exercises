@@ -91,3 +91,6 @@
             return in_array($file_ext, $allowed_ext);
         }
     }
+
+?>
+

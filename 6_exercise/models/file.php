@@ -10,7 +10,7 @@
                                       `data (`user`, `filename` ,`filesize`, `filetype`, `description`, `saved`)
                                    VALUES 
                                       (?, ?, ?, ?, ?, ?)", array($username, $password, $size, $type, $description, $target_path));
-            if ($sql) {	
+            if ($sql) {    
                 return true;
             }
         }
@@ -40,7 +40,7 @@
                                    WHERE 
                                       file_ext = ?", array($file_ext)); 
             if (!$sql) {
-                die("problem");	
+                die("problem");    
             }
             $res = mysqli_fetch_array($sql);
             return $res[0];
@@ -51,6 +51,5 @@
         }
     }
 
-
-       
 ?>
+

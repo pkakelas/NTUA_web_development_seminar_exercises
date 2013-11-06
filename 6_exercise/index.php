@@ -24,12 +24,12 @@
     }
     switch ($_SERVER['REQUEST_METHOD']){
         case 'POST':
-                $http_vars = $_POST;
-                $https_vars['file'] = $_FILES['file'];
-                break;
+            $http_vars = $_POST;
+            $https_vars['file'] = $_FILES['file'];
+            break;
         case 'GET':
-                $http_vars = $_GET;
-                break;
+            $http_vars = $_GET;
+            break;
     }
     if ($methods[$method] == 1 && $_SERVER['REQUEST_METHOD'] != 'POST') {
         $method = $method . '_view';

@@ -21,3 +21,6 @@
             view("session_create", "html");
         }
     }
+
+?>
+

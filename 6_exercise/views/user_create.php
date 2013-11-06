@@ -9,7 +9,7 @@
         <p> <label for="username">	Choose a username </label> <input id="username" type="text" name="username" />
         </p>
         <p> <label for="password" >	Choose a password </label> <input id="password" type="password" name="password" /> </p>
-         <p> <input  id="submit" type="submit" value="Register" /> </p>
+        <p> <input  id="submit" type="submit" value="Register" /> </p>
     </form>
 </div>
 

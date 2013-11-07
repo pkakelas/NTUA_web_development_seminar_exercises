@@ -1,11 +1,11 @@
 <?php
     
     include 'models/query_helper.php';
+    include 'models/settings.php';
 
     class FileModel {
     
         public static function create($username, $name, $size, $type, $description, $target_path) {
-            $target_path = "files/";
             $sql = prepared_query("INSERT INTO 
                                       `data (`user`, `filename` ,`filesize`, `filetype`, `description`, `saved`)
                                    VALUES 
@@ -15,8 +15,8 @@
             }
         }
     
-        public static function listing() {
-            $dir = opendir("files/"); 
+        public static function listing($target_path) {
+            $dir = opendir($target_path); 
             $names = array();
             while ($read = readdir($dir)) {
                 if ($read != '.' && $read != '..' && $read != 'desktop.ini') {

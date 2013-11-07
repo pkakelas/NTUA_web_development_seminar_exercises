@@ -20,12 +20,11 @@
         $method = '';
     }
     if (!isset($methods[$method])) {
-       die(view ("main", "html"));    
+       die(view ("main", $variables, "html"));    
     }
     switch ($_SERVER['REQUEST_METHOD']){
         case 'POST':
             $http_vars = $_POST;
-            $https_vars['file'] = $_FILES['file'];
             break;
         case 'GET':
             $http_vars = $_GET;

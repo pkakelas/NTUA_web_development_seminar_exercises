@@ -6,7 +6,7 @@
             include 'models/file.php';
             include 'models/session.php';
             $problems = array();
-            $target_path = "/home/dimitris/test/$filename";
+            $target_path = "files/$filename";
             $name = name_correct($filename);
             if (!file_exists($tmp_name)){
                 $problems[] = "You haven't chosen any files yet.";
@@ -21,14 +21,14 @@
                 $variables = array(
                     'problems' => $problems
                 );
-                view("file_create_problems", "html", $variables);    
+                view("file_create_problems", $variables, "html");    
             }
             else {
                 move_uploaded_file($tmp_name, $target_path);
                 $result = file_model::create($username, $name, $size, $type, $description, $target_path);
                 if ($result) {            
                     $_SESSION['name'] = $name;
-                    view("upload_true", "html");
+                    view("upload_true", $variables, "html");
                 }
                 else  { 
                     echo "shit";
@@ -59,20 +59,20 @@
         
         public static function listing_view() {
             include 'models/file.php';
-            $names = FileModel::listing();
+            $names = FileModel::listing($target_path);
             if ($names) {
                 $variables = array(
                     'names' => $names
                 );
-                view("list", "html", $variables);
+                view("list", $variables, "html");
             }
             else {
-                view("list_false", "html", $variables);         
+                view("list_false", $variables, "html");         
             }
         }
         
         public static function create_view() {
-            view("home", "html");
+            view("home", $variables, "html");
         }
 
         private static function name_correct($filename) {

@@ -15,6 +15,9 @@
                 else if ($age < 13) {
                     $problems[] = "You are to young to register to Boom Uploader.. Wait some years, until you are 13 and then discover the imagine world of  Boom Uploader !!";
                 } 
+                else if ($age > 90) {
+                    $problems[] = "You are to old to register to Boom Uploader.. Wait some years, until you die and then discover the imagine world of heaven!!";
+                } 
                 if ($exist) {
                     $problems[] = "The username exists. Please try another username.";
                 }    
@@ -27,10 +30,9 @@
             $problems = register_validation($name, $surname, $age, $username, $password, $email);
             $arrlength = count($problems);
             if (count($problems)) {
-                $variables = array(
-                    'problems' => $problems
+                view("register_problems", array(
+                    'problems' => $problems), "html"
                 );
-                view("register_problems", "html", $variables);
             }
             else {
                 $result = UserModel::register($name, $surname, $age, $username, $password, $email); 
@@ -38,15 +40,15 @@
                     $variables = array(
                         'username' => $_SESSION['username']
                     ); 
-                    view("home", "html", $variables);
+                    view("home", $variables, "html");
                 }
                 else {
-                    view("register_false_query", "html");                }
+                    view("register_false_query", $variables, "html");                }
             }
         }
         
         public static function create_view() {
-           view("user_create", "html"); 
+           view("user_create", $variables, "html"); 
         }
     }
 

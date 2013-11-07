@@ -5,4 +5,3 @@
 </ol>
 <p> please <a href="index.php?resource=user&method=signin">Try again</a></p>
 <p>If the problem continues, please contact me: pkakelas@gmail.com </p>
->

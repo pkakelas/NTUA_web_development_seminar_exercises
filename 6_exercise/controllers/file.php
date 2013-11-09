@@ -2,22 +2,21 @@
 
      class FileController {
 
-        public static function create($filename, $username, $description, $tmp_name, $size, $type) {
+        public static function create($filename, $name, $description, $tmp_name, $filesize, $filetype) {
             include 'models/file.php';
-            include 'models/session.php';
             $problems = array();
             $target_path = "files/$filename";
-            $name = name_correct($filename);
-            if (!file_exists($tmp_name)){
+            $name = FileController::name_correct($filename);
+            if (!file_exists($tmp_name)) {
                 $problems[] = "You haven't chosen any files yet.";
             }
-            else if (!valid_file_extension($filename)) {
+            else if (FileController::valid_file_extension($filename)) {
                 $problems[] = "I am afraid the file that you attempted to upload is not supported.";    
             }
-            else if (file_exists("/home/dimitris/test/$filename")) {
+            else if (file_exists("files/$filename")) {
                 $problems[] = "The file exists. Please upload another file, or change the name of your file.";
             } 
-            if (count($problems)) {
+            if (!empty($problems)) {
                 $variables = array(
                     'problems' => $problems
                 );
@@ -25,7 +24,7 @@
             }
             else {
                 move_uploaded_file($tmp_name, $target_path);
-                $result = file_model::create($username, $name, $size, $type, $description, $target_path);
+                $result = FileModel::create($name, $filename, $filesize, $filetype, $description, $target_path);
                 if ($result) {            
                     $_SESSION['name'] = $name;
                     view("upload_true", $variables, "html");

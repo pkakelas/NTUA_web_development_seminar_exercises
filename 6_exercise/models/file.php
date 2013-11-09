@@ -5,11 +5,11 @@
 
     class FileModel {
     
-        public static function create($username, $name, $size, $type, $description, $target_path) {
+        public static function create($name, $filename, $filesize, $filetype, $description, $target_path) {
             $sql = prepared_query("INSERT INTO 
                                       `data (`user`, `filename` ,`filesize`, `filetype`, `description`, `saved`)
                                    VALUES 
-                                      (?, ?, ?, ?, ?, ?)", array($username, $password, $size, $type, $description, $target_path));
+                                      (?, ?, ?, ?, ?, ?)", array($name, $filename, $filesize, $filetype, $description, $target_path));
             if ($sql) {    
                 return true;
             }

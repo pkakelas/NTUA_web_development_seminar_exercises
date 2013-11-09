@@ -56,7 +56,7 @@
             FileModel::read($filename);
         }
         
-        public static function listing_view() {
+        public static function listing() {
             include 'models/file.php';
             $names = FileModel::listing($target_path);
             if ($names) {

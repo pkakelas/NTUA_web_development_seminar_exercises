@@ -7,18 +7,20 @@
             include 'models/sql.php';
             $result = UserModel::authenticate($username2, $password2);
             if ($result) {
-                view('home', array(
-                    'username' => $_SESSION['username']
-                    ), 'html'
+                $_SESSION['username'] = $username2;
+                view(
+                    'home',
+                    array('username' => $_SESSION['username']), 
+                    'html'
                 );
             }
             else {
-                view("session_create_false", $variables, "html");   
+                view("session_create_false", array(), "html");   
             }   
         }
         
         public static function create_view() {
-            view("session_create", $variables, "html");
+            view("session_create", array(), "html");
         }
     }
 

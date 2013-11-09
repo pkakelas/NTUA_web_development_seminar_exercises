@@ -17,17 +17,18 @@
                 $problems[] = "The file exists. Please upload another file, or change the name of your file.";
             } 
             if (!empty($problems)) {
-                $variables = array(
-                    'problems' => $problems
-                );
-                view("file_create_problems", $variables, "html");    
+                view(
+                    "file_create_problems",
+                    array('problems' => $problems), 
+                    "html"
+                );    
             }
             else {
                 move_uploaded_file($tmp_name, $target_path);
                 $result = FileModel::create($name, $filename, $filesize, $filetype, $description, $target_path);
                 if ($result) {            
                     $_SESSION['name'] = $name;
-                    view("upload_true", $variables, "html");
+                    view("upload_true", array(), "html");
                 }
                 else  { 
                     echo "shit";
@@ -60,18 +61,19 @@
             include 'models/file.php';
             $names = FileModel::listing($target_path);
             if ($names) {
-                $variables = array(
-                    'names' => $names
+                view(
+                    "list",
+                    array('names' => $names),
+                    "html"
                 );
-                view("list", $variables, "html");
             }
             else {
-                view("list_false", $variables, "html");         
+                view("list_false", array(), "html");         
             }
         }
         
         public static function create_view() {
-            view("home", $variables, "html");
+            view("home", array(), "html");
         }
 
         private static function name_correct($filename) {

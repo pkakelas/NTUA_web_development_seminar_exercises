@@ -21,11 +21,11 @@
         $method = '';
     }
     if (!isset($methods[$method])) {
-       die(view ("main", $variables, "html"));    
+       die(view ("main", array(), "html"));    
     }
     switch ($_SERVER['REQUEST_METHOD']){
         case 'POST':
-            if (!empty($_FILES['file'])) {
+            if (ISSET($_FILES['file'])) {
                 $_FILES['filename'] = $_FILES["file"]["name"]; 
                 $_FILES['filetype'] = $_FILES["file"]["type"];         
                 $_FILES['filesize'] = $_FILES["file"]["size"]; 
@@ -52,7 +52,7 @@
     $reflection = new ReflectionMethod($controllername, $methodname);
     $parameters = $reflection->getParameters();
     $arguments = array();
-    if ($http_vars = '$_GET') {
+#   if ($http_vars = '$_GET') {
         foreach ($parameters as $parameter) {
             if (isset($http_vars[$parameter->name])) {
                 $arguments[] = $http_vars[$parameter->name];
@@ -61,19 +61,19 @@
                 echo "fuck2"; 
             }
         }   
-    }
-    else {
-        foreach ($http_vars as $value) {
-            foreach ($parameters as $parameter) {
-                if (isset($value[$parameter->name])) {
-                    $arguments[] = $value[$parameter->name];
-                }
-                else {
-                    echo "fuck1";    
-                }
-            }
-        }
-    }
+#   }
+#   else {
+#       foreach ($http_vars as $value) {
+#           foreach ($parameters as $parameter) {
+#               if (isset($value[$parameter->name])) {
+#                   $arguments[] = $value[$parameter->name];
+#               }
+#           else {
+#               echo "fuck1";    
+#           }
+#       }
+#   }
+
         
     call_user_func_array(array($controllername, $methodname), $arguments);
         

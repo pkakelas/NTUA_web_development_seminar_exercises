@@ -30,25 +30,29 @@
             $problems = register_validation($name, $surname, $age, $username, $password, $email);
             $arrlength = count($problems);
             if (count($problems)) {
-                view("register_problems", array(
-                    'problems' => $problems), "html"
+                view(
+                    "register_problems", 
+                    array('problems' => $problems), 
+                    "html"
                 );
             }
             else {
                 $result = UserModel::register($name, $surname, $age, $username, $password, $email); 
                 if ($result) {
-                    $variables = array(
-                        'username' => $_SESSION['username']
-                    ); 
-                    view("home", $variables, "html");
+                    $_SESSION['username'] = $username2;
+                    view(
+                        "home", 
+                        array('username' => $_SESSION['username']),
+                        "html"
+                    );
                 }
                 else {
-                    view("register_false_query", $variables, "html");                }
+                    view("register_false_query", array(), "html");                }
             }
         }
         
         public static function create_view() {
-           view("user_create", $variables, "html"); 
+           view("user_create", array(), "html"); 
         }
     }
 

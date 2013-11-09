@@ -1,5 +1,5 @@
 <div class='uploaded'>
-    <p>Welcome<?php echo $username; ?>. If you want to upload a file to our servers, in order to 
+    <p>Welcome <?php echo $_SESSION['username'];?>. If you want to upload a file to our servers, in order to 
     share it with other users, please fill in all the above forms. The file must be less than 2mb .. </p>
     <form id="forms" action="index.php?resource=file&method=create" enctype="multipart/form-data" method="post">
         <p> File :</p>

@@ -60,16 +60,11 @@
         public static function listing() {
             include 'models/file.php';
             $names = FileModel::listing($target_path);
-            if ($names) {
-                view(
-                    "list",
-                    array('names' => $names),
-                    "html"
-                );
-            }
-            else {
-                view("list_false", array(), "html");         
-            }
+            view(
+                "list",
+                array('names' => $names),
+                "html"
+            );
         }
         
         public static function create_view() {

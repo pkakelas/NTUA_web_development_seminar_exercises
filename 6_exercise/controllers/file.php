@@ -2,17 +2,21 @@
 
      class FileController {
 
-        public static function create($filename, $name, $description, $tmp_name, $filesize, $filetype) {
+        public static function create($files, $description) {
             include 'models/file.php';
+            $filename = $files['name']; 
+            $filesize = $files['size']; 
+            $filetype = $files['type']; 
+            $tmp_name = $files['tmp_name']; 
             $problems = array();
             $target_path = "files/$filename";
             $name = FileController::name_correct($filename);
             if (!file_exists($tmp_name)) {
                 $problems[] = "You haven't chosen any files yet.";
             }
-            else if (FileController::valid_file_extension($filename)) {
-                $problems[] = "I am afraid the file that you attempted to upload is not supported.";    
-            }
+//          else if (FileController::valid_file_extension($filename)) {
+//              $problems[] = "I am afraid the file that you attempted to upload is not supported.";    
+//          }
             else if (file_exists("files/$filename")) {
                 $problems[] = "The file exists. Please upload another file, or change the name of your file.";
             } 

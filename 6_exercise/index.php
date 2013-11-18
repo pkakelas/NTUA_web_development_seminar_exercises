@@ -28,6 +28,9 @@
     switch ($_SERVER['REQUEST_METHOD']){
         case 'POST':
             $http_vars = $_POST;
+            if (isset($_FILES['file'])) {
+                $http_vars['files']= $_FILES['file'];       
+            }
             break;
         case 'GET':
             $http_vars = $_GET;

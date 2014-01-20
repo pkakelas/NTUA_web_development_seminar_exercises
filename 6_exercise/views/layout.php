@@ -23,7 +23,7 @@
                     include $content;
                     view('footer');
                 ?>   
-                <body>
+                </body>
             </html>
             <?php
         }
